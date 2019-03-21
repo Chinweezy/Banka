@@ -1,23 +1,53 @@
-<! doctype html>
+<!doctype html>
 
 <html>
-<head>
-</head>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<body>
-	<form>
-		First name: <input type = "text"></input><br>
-		Last name: <input type = "text" ></input><br>
-		Date of Birth: <input type = "date"></input><br>
-		Email: <input type = "email"></input><br>
-		Password: <input type = "password"></input><br>
-		Re-enter password: <input type = "password"></input><br>
-		<input type = "submit" value = "Sign-up"></input>
+        <title>Sign-up</title>
+        <link rel = "stylesheet" href = "style.css"
+	</head>
 
-	</form>
-</body>
+	<body>
+		<header>
+	        <div class = "container">
+	            <div id = "brandName">
+	                <h1><span class = "highlight">Banka</span> Banking App</h1>
+	            </div>
+	            <nav>
+                    <ul>
+                        <li><a href = "index.html" target = "_blank">Home</a></li>
+                        <li><a href = "Login.html" target = "_blank">Login</a></li>
+                        <li class = "current"><a href = "Signup.html" target = "_blank">Sign up</a></li>
+                         <li><a href = "admin.html" target = "_blank">Admin</a></li>
+                        <li><a href = "staff.html" target = "_blank">Staff(Cashier)</a></li>
+                    </ul>
+                </nav>
+			</div>
+		</header>
+			
+		<section>
+			<div class = "signup-page">
+				<h1>Sign Up</h1>
+					<form class = "form" action = "">
+						First Name: <input type = "text" placeholder = "First name"></input>
+						Last Name: <input type = "text" placeholder = "Last name"></input>Email: <input type = "email" placeholder = "Email"></input>
+						Password: <input type = "password" placeholder = "Enter password"></input>
+						Re-enter password: <input type = "password" placeholder = "Re-type password "></input>
+						<p class = "message">Already Registered?<a href = "Login.html" target = "_blank"> Login</a>
+						</p>
+						<input type = "submit" value = "Sign-up"></input>
+					</form>
+			</div>
+		</section>
 
-
-
+		<section>
+			<footer>
+	         	<p>Banka Banking App, Copyright &copy; 2019</p>
+	     	</footer>
+		</section> 
+	</body>
 </html>
 
