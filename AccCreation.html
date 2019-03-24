@@ -29,14 +29,13 @@
         </header>
 
 
-            <section>
-            <div>
-                <h1>Open a bank account</h1>
+        <section>
+            <div class = "open-account">
                 <p>You are opening an instant account</p>
             </div>
    
-            <form class = "form"  id = "accForm"action = "">
-                <div "open-account tab">
+            <form class = "form"  id = "accForm" action = "">
+                <div "open-account">
                     Title: <select id = "title">
                         <option>--select--</option>
                         <option>Dr.</option>
@@ -48,29 +47,20 @@
                     First Name:<input type = "text" placeholder = "Enter First Name..." required></input>
                     Last Name:<input type = "text" placeholder = "Enter Last Name..." required></input>
                     Other name(s):<input type = "text" placeholder = "Other names..." required></input>
-                    Gender:<span><input type = "radio">Female</input>
-                    <input type = "radio">Male</input></span>
-                </div>
-
-                <div class = "open-account tab">
-                    <h1>Open a bank account</h1>
-                    <p>You are opening an instant account</p>
-                        Date of Birth:<input type = "date" placeholder = "Enter date of birth"></input>
-                        Phone no:<input type = "phone" placeholder = "Enter phone number"></input>
-                        Email:<input type = "email" placeholder = "Enter email"></input>
-                        Address of residence: <input type = "address" placeholder = "Enter Address"></input>
-                        State of residence: <type = "address" placeholder = "Enter Address"></input>
-                <div>
-                    <button onclick = "nextPrev(-1)" id ="prevBtn">Previous</button>
-                    <button onclick = "nextPrev(1)" id ="nextBtn">Next</button>
-                </div>
-
+                    Gender: <select id = "title">
+                        <option>--select--</option>
+                        <option>Female</option>
+                        <option>Male</option>
+                    </select><br>
+                    Date of Birth:<input type = "date" placeholder = "Enter date of birth"></input>
+                    Phone no:<input type = "phone" placeholder = "080-xxxxxxxx"></input>
+                    Email:<input type = "email" placeholder = "Enter email"></input>
+                    Address of residence: <input type = "address" placeholder = "Enter Address"></input>
+                    State of residence: <input type = "text" placeholder = "Enter state of residence"></input>
+                    <input type = "submit"></input>
                 </div>
             </form>
-
-
-            </section>
-
+        </section>
 
         <section>
             <footer>
