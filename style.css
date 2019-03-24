@@ -211,7 +211,7 @@ footer {
 	font-family: Helvetica;
 }
 
-/*user dashboard*/
+/*user profile page*/
 
 .sidebar {
 	width:300px;
@@ -225,7 +225,7 @@ footer {
 	color: #cccccc;
 	display: block;
 	padding: 10px;
-	border-bottom: 1px solid #0A0A0A /*change the colors */
+	border-bottom: 1px solid #0A0A0A; /**change the colors**/
 }
 
 .sidebar ul a{
@@ -239,20 +239,31 @@ footer {
 	color: #ffffff;
 }
 
-.sidebar li a.selected{
-	background: #030303;
-	color: #ffffff;
-}
-
 .content {
 	width: auto;
 	height: 500px;
 	background-color: #ffffff;
 }
 
-.content h2 {
-	float:right;
-	padding-right: 30px;
+.content h3 {
+	float:left;
+	margin-left: 30px;
+}
+
+#uploadPic {
+	margin:70px 0 0 0;
+	float: left;
+	display: block;
+	font-family: Arial;
+	font-size: 15px;
+}
+
+#uploadPic input {
+	margin:5px;
+}
+
+#uploadPic input[text = "file"], input[text = "submit"] {
+	font-family: sans-serif;
 }
 
 /*Media Queries*/
