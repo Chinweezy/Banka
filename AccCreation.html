@@ -30,19 +30,45 @@
 
 
             <section>
-                <div class = "open-account">
-                    <h1>Open a bank account</h1>
-                    <form class = "form" action = "">
-                        First Name:<input type = "text" placeholder = "Enter First Name"></input>
-                        Last Name:<input type = "text" placeholder = "Enter Last Name"></input>
-                        <!--Gender:<input type = "radio" value = "Female", "Male"></input> Find out the way to do circular checkboxes -->
-                        Date of Birth:<input type = "date" placeholder = "Enter date of birth"></input>
-                        Email:<input type = "email" placeholder = "Enter email"></input>
-                        Password:<input type = "password" placeholder = "Enter password"></input> <!--Find a way to do strength test-->
-                        Re-enter password: <input type = "password" placeholder = "Re-type password "></input><!--Find a way to do password match test-->
-                        <input type = "submit" value = "Create Account"></input>
-                    </form>
+            <div>
+                <h1>Open a bank account</h1>
+                <p>You are opening an instant account</p>
+            </div>
+   
+            <form class = "form"  id = "accForm"action = "">
+                <div "open-account tab">
+                    Title: <select id = "title">
+                        <option>--select--</option>
+                        <option>Dr.</option>
+                        <option>Mr.</option>
+                        <option>Mrs.</option>
+                        <option>Miss.</option>
+                        </select><br>
+
+                    First Name:<input type = "text" placeholder = "Enter First Name..." required></input>
+                    Last Name:<input type = "text" placeholder = "Enter Last Name..." required></input>
+                    Other name(s):<input type = "text" placeholder = "Other names..." required></input>
+                    Gender:<span><input type = "radio">Female</input>
+                    <input type = "radio">Male</input></span>
                 </div>
+
+                <div class = "open-account tab">
+                    <h1>Open a bank account</h1>
+                    <p>You are opening an instant account</p>
+                        Date of Birth:<input type = "date" placeholder = "Enter date of birth"></input>
+                        Phone no:<input type = "phone" placeholder = "Enter phone number"></input>
+                        Email:<input type = "email" placeholder = "Enter email"></input>
+                        Address of residence: <input type = "address" placeholder = "Enter Address"></input>
+                        State of residence: <type = "address" placeholder = "Enter Address"></input>
+                <div>
+                    <button onclick = "nextPrev(-1)" id ="prevBtn">Previous</button>
+                    <button onclick = "nextPrev(1)" id ="nextBtn">Next</button>
+                </div>
+
+                </div>
+            </form>
+
+
             </section>
 
 
