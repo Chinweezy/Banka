@@ -10,8 +10,8 @@ body {
 
 /*global*/
 .container{
-	width: 80%;
-	margin: auto;
+	width: 100%;
+	margin: 0 auto;
 	overflow: hidden;
 }
 
@@ -85,14 +85,14 @@ header #brandName {
 }
 
 header #brandName h1{
-	margin:0;
+	margin:0 20px;
 }
 
 header a{
 	color: #ffffff;
 	text-decoration: none;
 	text-transform: uppercase;
-	font-size: 13px;
+	font-size: 15px;
 }
  header .highlight, header .current a{
  	color: #cc0000;
@@ -159,7 +159,6 @@ footer {
 	min-height: 70px;
 	background-color: #19194d;
 	color: #ffffff;
-	margin-top: 20px;
 	text-align: center;
 	padding: 20px;
 	border-top: #cc0000 3px solid;
@@ -210,6 +209,50 @@ footer {
 	font-weight: bold;
 	font-size: 25px;
 	font-family: Helvetica;
+}
+
+/*user dashboard*/
+
+.sidebar {
+	width:300px;
+	height: 500px;
+	background-color:grey; /*change the colors*/
+	float: left;
+} 
+
+.sidebar li {
+	padding-left: 20px;
+	color: #cccccc;
+	display: block;
+	padding: 10px;
+	border-bottom: 1px solid #0A0A0A /*change the colors */
+}
+
+.sidebar ul a{
+	color: #ffffff; /*change the colors*/
+	font-family: Arial;
+	text-decoration: none;
+}
+
+.sidebar li:hover{
+	background: #030303;
+	color: #ffffff;
+}
+
+.sidebar li a.selected{
+	background: #030303;
+	color: #ffffff;
+}
+
+.content {
+	width: auto;
+	height: 500px;
+	background-color: #ffffff;
+}
+
+.content h2 {
+	float:right;
+	padding-right: 30px;
 }
 
 /*Media Queries*/
