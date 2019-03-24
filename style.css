@@ -201,13 +201,12 @@ footer {
 	width:360px;
 	padding: 5px 0 0;
 	margin: auto;
+	background-color: #f4f4f4;
 }
 
-.open-account h1{
+.open-account p{
 	text-align: center;
-	margin:0 0 0 0;
-	font-weight: bold;
-	font-size: 25px;
+	margin:15px 0 15px 0;
 	font-family: Helvetica;
 }
 
@@ -216,9 +215,11 @@ footer {
 	margin-bottom: 10px;
 }
 
-.form input[type = radio]{
+.form input[type = "radio"]{
 	padding:0;
+	display:inline;
 }
+
 
 /*user profile page*/
 
@@ -244,8 +245,9 @@ footer {
 }
 
 .sidebar li:hover{
-	background: #030303;
+	background: #ccccd4; /*get a better color*/
 	color: #ffffff;
+	cursor: pointer;
 }
 
 .content {
