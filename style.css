@@ -256,9 +256,10 @@ footer {
 	background-color: #ffffff;
 }
 
-.content h3 {
-	float:left;
-	margin-left: 30px;
+.content p {
+	text-align: center;
+	font-size: 15px;
+
 }
 
 #uploadPic {
@@ -275,6 +276,19 @@ footer {
 
 #uploadPic input[text = "file"], input[text = "submit"] {
 	font-family: sans-serif;
+}
+
+/*view bank account*/
+.accTables, .accTables th, .accTables td{
+	border-collapse: collapse;
+	font-family: Helvetica, Arial;
+	position: center;
+	border: 1px solid black;
+}
+
+.accTables tr:nth-child(even) {
+  background-color: #dddddd;
+  width: 100%;
 }
 
 /*Media Queries*/
