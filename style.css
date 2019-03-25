@@ -282,30 +282,17 @@ footer {
 
 /*admin dashboard*/
 
-.collapse li {
-	padding-left: 20px;
-	color: #cccccc;
-	display: block;
-	padding: 10px;
-	box-sizing:border-box;
-	border-bottom: 1px solid #0A0A0A;
+/*admin account creation*/
+.account-creation p{
+	font-size: 15px;
+	font-family: Helvetica;
+	text-align: center; 
+}
+.form input[type = "radio"]{
+	display: inline;
+	width:50px;
 }
 
-.collapse ul a{
-	color: #ffffff; /*change the colors*/
-	font-family: Arial;
-	text-decoration: none;
-}
-
-.collapse li:hover{
-	background: #ccccd4; /*get a better color*/
-	color: #ffffff;
-	cursor: pointer;
-}
-
-.collapsible-body li a{
-	padding:0 23.5px 0 31px
-}
 /*view bank account*/
 .accTables, .accTables th, .accTables td{
 	border-collapse: collapse;
