@@ -235,7 +235,9 @@ footer {
 	color: #cccccc;
 	display: block;
 	padding: 10px;
-	border-bottom: 1px solid #0A0A0A; /**change the colors**/
+	box-sizing:border-box;
+	border-bottom: 1px solid #0A0A0A;
+
 }
 
 .sidebar ul a{
@@ -278,6 +280,32 @@ footer {
 	font-family: sans-serif;
 }
 
+/*admin dashboard*/
+
+.collapse li {
+	padding-left: 20px;
+	color: #cccccc;
+	display: block;
+	padding: 10px;
+	box-sizing:border-box;
+	border-bottom: 1px solid #0A0A0A;
+}
+
+.collapse ul a{
+	color: #ffffff; /*change the colors*/
+	font-family: Arial;
+	text-decoration: none;
+}
+
+.collapse li:hover{
+	background: #ccccd4; /*get a better color*/
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.collapsible-body li a{
+	padding:0 23.5px 0 31px
+}
 /*view bank account*/
 .accTables, .accTables th, .accTables td{
 	border-collapse: collapse;
