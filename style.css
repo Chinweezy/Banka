@@ -281,6 +281,36 @@ footer {
 }
 
 /*admin dashboard*/
+.collapsible-body {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+#dummy {
+	display:none;
+	margin: 50px 350px;
+}
+
+#dummy-accounts, #dummy-accounts th, #dummy-accounts td {
+	width: 800px;
+	border: 1px solid black;
+	border-collapse: collapse;
+	font-family: Helvetica, Arial;
+	font-size: 15px;
+}
+
+
+#dummy #dummy-accounts td#money{
+	text-align: right;
+}
+
+#dummy-accounts tr:nth-child(even) {
+  background-color: #dddddd;
+  width: 800px;
+}
+
 
 /*admin account creation*/
 .account-creation p{
