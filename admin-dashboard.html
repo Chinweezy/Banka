@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width">
 
         <title>Welcome @admin</title>
-        <link rel = "stylesheet" href = "style.css"
+        <link rel = "stylesheet" href = "style.css"></link>
+        <script src = "script.js"></script>
 
     </head>
 
@@ -17,7 +18,7 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href = "#">Sign-out</a></li> <!--sign out page -->
+                        <li><button onclick = "signout()">Sign-out</button></li> <!--sign out page -->
                      </ul>
                 </nav>
            </div> 
@@ -26,22 +27,62 @@
         <div class = "container">
             <div class = "sidebar"> 
                 <ul>
-                    <li><a href = "index.html" target = "_self">Home</a></li>
+                    <li><a onclick = "loadPage()">Home</a></li>
                     <li><a href = "#" target = "_blank">Activate / deactivate a user account</a></li>
-                    <li><a href = "bank-accounts.html" target = "_blank">Bank accounts</a></li>
-                    <li><a>Create a staff / admin account</a></li>
+                    <li><a onclick = "loadAccPage()">Bank accounts</a></li>
+                    <li class = "collapsible"><a>Create a staff / admin account</a></li>
+
+                    <div class = "collapsible-body">
                     <li><a href = "adminAcc-creation.html" target = "_self">Admin Account</a></li>
                     <li><a href = "adminAcc-creation.html" target = "_self">Staff Account</a></li>
+                    </div>
                 </ul>
             </div>
 
 
             <div class = "content">
+                <div id = "homepage">
                 <h3>Welcome, @admin</h3>
                     <form id = "uploadPic"action = " ">
                         Upload profile picture<br><input type = "file" name = "Upload picture file"> </input><br>
                         <input type = "submit" name = "UploadBtn" value = "Upload"></input>
                     </form> 
+                </div>
+
+                <div id = "dummy">
+                    <p>You are viewing dummy data for all user accounts</p>
+                    <table id = "dummy-accounts">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Acount No</th>
+                        <th>Account Balance</th>
+                    </tr>
+                    <tr>
+                        <td>Sherlock</td>
+                        <td>Holmes</td>
+                        <td>highfunctioningsociopath@genius.com</td>
+                        <td>4026785001</td>
+                        <td id="money">0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Jim</td>
+                        <td>Moriaty</td>
+                        <td>jmoriaty@smart.com</td>
+                        <td>4026785002</td>
+                        <td id="money">20000.00</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Watson</td>
+                        <td>armydoctor@bakerstreet.com</td>
+                        <td>4026785003</td>
+                        <td id="money">2000.00</td>
+                    </tr>
+                    </table>
+                </div>
+
             </div>
         </div>
 
