@@ -22,7 +22,6 @@ function loadPage() {
     var bankAccounts = document.getElementById("dummy");
     bankAccounts.style.display = "none";
     homepage.style.display = "block";
-
 }
 
 function loadAccPage() {
@@ -30,6 +29,32 @@ function loadAccPage() {
     var bankAccounts = document.getElementById("dummy");
     homepage.style.display = "none";
     bankAccounts.style.display = "table";
+}
+
+function loadOpenAccPage() {
+    var homepage = document.getElementById("homepage");
+    var openAccount = document.getElementById("dummy");
+    var transactionHistory = document.getElementById("dummy1")
+    homepage.style.display = "none";
+    transactionHistory.style.display = "none";
+    openAccount.style.display = "block";
+} 
+ function loadTransHistory() {
+    var homepage = document.getElementById("homepage");
+    var openAccount = document.getElementById("dummy");
+    var transactionHistory = document.getElementById("dummy1");
+    homepage.style.display = "none";
+    openAccount.style.display = "none";
+    transactionHistory.style.display = "table";
+} 
+
+function loadUserPage() {
+    var homepage = document.getElementById("homepage");
+    var openAccount = document.getElementById("dummy");
+    var transactionHistory = document.getElementById("dummy1");
+    transactionHistory.style.display = "none";
+    openAccount.style.display = "none";
+    homepage.style.display="block";
 }
 
 function searchAccountRecord() {
