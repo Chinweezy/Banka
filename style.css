@@ -280,7 +280,7 @@ footer {
 	font-family: sans-serif;
 }
 
-#dummy1 input[type = "date"] {
+#dummy2 input[type = "date"] {
 	margin-bottom: 20px;
 }
 
@@ -301,7 +301,7 @@ footer {
   margin-bottom: 12px;
 }
 
-#dummy, #dummy1 {
+#dummy, #dummy1, #dummy2 {
 	display:none;
 	margin: 50px 350px;
 }
