@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width">
 
         <title>Welcome @User</title>
-        <link rel = "stylesheet" href = "style.css"
+        <link rel = "stylesheet" href = "style.css"></link>
+        <script src = "script.js"></script>
 
     </head>
 
@@ -26,17 +27,86 @@
         <div class = "container">
             <div class = "sidebar"> 
                 <ul>
-                    <li><a href = "index.html" target = "_self">Home</a></li>
-                    <li><a href = "AccCreation.html" target = "_blank">Open an account</a></li>
-                    <li><a href = "#">Transaction history</a></li>
+                    <li><a onclick = "loadUserPage()">Home</a></li>
+                    <li><a onclick = "loadOpenAccPage()">Open an account</a></li>
+                    <li><a onclick = "loadTransHistory()">Transaction history</a></li>
                 </ul>
             </div>
             <div class = "content">
+                <div  id = "homepage">
                 <h3>Welcome, @User</h3>
                     <form id = "uploadPic"action = " ">
                         Upload profile picture<br><input type = "file" name = "Upload picture file"> </input><br>
                         <input type = "submit" name = "UploadBtn" value = "Upload"></input>
-                    </form> <!--continue from here*/ -->
+                    </form> 
+                </div>
+
+                <div id = "dummy">
+                    <p>You are opening an instant account</p>
+
+                    <form class = "form"  id = "accForm" action = "">
+                        Title: <select id = "title">
+                                    <option>--select--</option>
+                                    <option>Dr.</option>
+                                    <option>Mr.</option>
+                                    <option>Mrs.</option>
+                                    <option>Miss.</option>
+                                </select><br>
+                        First Name:<input type = "text" placeholder = "Enter First Name..." required></input>
+                        Last Name:<input type = "text" placeholder = "Enter Last Name..." required></input>
+                        Other name(s):<input type = "text" placeholder = "Other names..." required></input>
+                        Gender:<input type = "radio">Female</input>
+                        <input type = "radio">Male</input><br>
+                        Date of Birth:<input type = "date" placeholder = "Enter date of birth"></input>
+                        Phone no:<input type = "phone" placeholder = "080-xxxxxxxx"></input>
+                        Email:<input type = "email" placeholder = "Enter email"></input>
+                        Address of residence: <input type = "address" placeholder = "Enter Address"></input>
+                        State of residence: <input type = "text" placeholder = "Enter state of residence"></input>
+                        <input type = "submit"></input>
+                    </form>
+                </div>
+
+                <div id = "dummy1">
+                    From:<input type = "date" id="searchBar"></input> To: <input type = "date" id="searchBar"></input>
+                    <input type = "submit" value = "Go"></input>
+                    <table id = "dummy-accounts" style = "width:130%">
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Transaction Date</th>
+                        <th>Account No</th>
+                        <th>Transaction Type</th>
+                        <th id="money">Debit</th>
+                        <th id="money">Credit</th>
+                    </tr>
+                    <tr>
+                        <td>1903003</td>
+                        <td>26/03/2019</td>
+                        <td id = "accountNo">4026785001</td>
+                        <td>Withdrawal</td>
+                        <td id="money">2,000.00</td>
+                        <td id="money"></td>
+                    </tr>
+                    <tr>
+                        <td>1903002</td>
+                        <td>24/03/2019</td>
+                        <td id = "accountNo">4026785001</td>
+                        <td>Deposit</td>
+                        <td id="money"></td>
+                        <td id="money">1,000.00</td>
+                    </tr>
+                    <tr>
+
+                        <td>1903001</td> <!--year-month-serialno-->
+                        <td>23/03/2019</td>
+                        <td id = "accountNo">4026785001</td>
+                        <td>Withdrawal</td>
+                        <td id="money">500.00</td>
+                        <td id="money"></td>
+
+                    </table>
+                </div>
+
+
             </div>
         </div>
 

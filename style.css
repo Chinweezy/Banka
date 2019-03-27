@@ -280,6 +280,10 @@ footer {
 	font-family: sans-serif;
 }
 
+#dummy1 input[type = "date"] {
+	margin-bottom: 20px;
+}
+
 /*admin dashboard*/
 .collapsible-body {
   padding: 0 18px;
@@ -297,7 +301,7 @@ footer {
   margin-bottom: 12px;
 }
 
-#dummy {
+#dummy, #dummy1 {
 	display:none;
 	margin: 50px 350px;
 }
