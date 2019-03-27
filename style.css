@@ -288,21 +288,32 @@ footer {
   background-color: #f1f1f1;
 }
 
+#myInput {
+  background: url("search-icon2.png") no-repeat;
+  width: 250px;
+  font-size: 12px;
+  padding: 10px;
+  border: 1px solid black;
+  margin-bottom: 12px;
+}
+
 #dummy {
 	display:none;
 	margin: 50px 350px;
 }
 
 #dummy-accounts, #dummy-accounts th, #dummy-accounts td {
-	width: 800px;
-	border: 1px solid black;
-	border-collapse: collapse;
 	font-family: Helvetica, Arial;
 	font-size: 15px;
+	border: 1px solid black;
+	border-collapse: collapse;
 }
 
+#dummy-accounts td#accountNo{
+	text-align: center;
+}
 
-#dummy #dummy-accounts td#money{
+#dummy-accounts td#money{
 	text-align: right;
 }
 
