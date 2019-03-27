@@ -28,7 +28,7 @@
             <div class = "sidebar"> 
                 <ul>
                     <li><a onclick = "loadPage()">Home</a></li>
-                    <li><a href = "#" target = "_blank">Activate / deactivate a user account</a></li>
+                    <li><a onclick = "loadUserAcc()">User Accounts</a></li>
                     <li><a onclick = "loadAccPage()">Bank accounts</a></li>
                     <li class = "collapsible"><a>Create a staff / admin account</a></li>
 
@@ -50,6 +50,43 @@
                 </div>
 
                 <div id = "dummy">
+                    <input type="text" id="myInput" onkeyup="searchAccountRecord()" placeholder="        First Name" >
+                    <table id = "dummy-accounts" style = "width:130%">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Acount No</th>
+                    </tr>
+                    <tr>
+                        <td>Sherlock</td>
+                        <td>Holmes</td>
+                        <td>highfunctioningsociopath@genius.com</td>
+                        <td>08058694545</td>
+                        <td id = "accountNo">4026785001</td>
+                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
+                    </tr>
+                    <tr>
+                        <td>Jim</td>
+                        <td>Moriaty</td>
+                        <td>jmoriaty@smart.com</td>
+                        <td>09091145390</td>
+                        <td id = "accountNo">4026785002</td>
+                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Watson</td>
+                        <td>armydoctor@bakerstreet.com</td>
+                        <td>08139453207</td>
+                        <td id = "accountNo">4026785003</td>
+                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
+                    </tr>
+                    </table>
+                </div>
+
+                <div id = "dummy1">
                     <input type="text" id="myInput" onkeyup="searchAccountRecord()" placeholder="        Account Number, First Name" >
                     <table id = "dummy-accounts" style = "width:130%">
                     <tr>

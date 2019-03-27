@@ -19,22 +19,36 @@ var i;
 }*/
 function loadPage() {
     var homepage = document.getElementById("homepage");
-    var bankAccounts = document.getElementById("dummy");
+    var userAcc = document.getElementById("dummy");
+    var bankAccounts = document.getElementById("dummy1");
     bankAccounts.style.display = "none";
+    userAcc.style.display = "none";
     homepage.style.display = "block";
 }
 
 function loadAccPage() {
     var homepage = document.getElementById("homepage");
-    var bankAccounts = document.getElementById("dummy");
+    var userAcc = document.getElementById("dummy");
+    var bankAccounts = document.getElementById("dummy1");
     homepage.style.display = "none";
+    userAcc.style.display = "none";
     bankAccounts.style.display = "table";
 }
 
+function loadUserAcc() {
+    var homepage = document.getElementById("homepage");
+    var userAcc = document.getElementById("dummy");
+    var bankAccounts = document.getElementById("dummy1");
+    homepage.style.display="none";
+    bankAccounts.style.display="none";
+    userAcc.style.display="table";
+}
+
+/*user-dashboard*/
 function loadOpenAccPage() {
     var homepage = document.getElementById("homepage");
     var openAccount = document.getElementById("dummy");
-    var transactionHistory = document.getElementById("dummy1")
+    var transactionHistory = document.getElementById("dummy2")
     homepage.style.display = "none";
     transactionHistory.style.display = "none";
     openAccount.style.display = "block";
@@ -42,7 +56,7 @@ function loadOpenAccPage() {
  function loadTransHistory() {
     var homepage = document.getElementById("homepage");
     var openAccount = document.getElementById("dummy");
-    var transactionHistory = document.getElementById("dummy1");
+    var transactionHistory = document.getElementById("dummy2");
     homepage.style.display = "none";
     openAccount.style.display = "none";
     transactionHistory.style.display = "table";
@@ -51,11 +65,12 @@ function loadOpenAccPage() {
 function loadUserPage() {
     var homepage = document.getElementById("homepage");
     var openAccount = document.getElementById("dummy");
-    var transactionHistory = document.getElementById("dummy1");
+    var transactionHistory = document.getElementById("dummy2");
     transactionHistory.style.display = "none";
     openAccount.style.display = "none";
     homepage.style.display="block";
 }
+
 
 function searchAccountRecord() {
   var input, filter, table, tr, td, i, txtValue;
