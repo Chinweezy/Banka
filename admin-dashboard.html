@@ -50,12 +50,14 @@
                 </div>
 
                 <div id = "dummy">
-                    <p>You are viewing dummy data for all user accounts</p>
-                    <table id = "dummy-accounts">
+                    <p>You are viewing dummy data for all user accounts</p><br>
+                    <input type="text" id="myInput" onkeyup="searchAccountRecord()" placeholder="        Account Number, First Name" >
+                    <table id = "dummy-accounts" style = "width:130%">
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
+                        <th>Phone Number</th>
                         <th>Acount No</th>
                         <th>Account Balance</th>
                     </tr>
@@ -63,22 +65,28 @@
                         <td>Sherlock</td>
                         <td>Holmes</td>
                         <td>highfunctioningsociopath@genius.com</td>
-                        <td>4026785001</td>
+                        <td>08058694545</td>
+                        <td id = "accountNo">4026785001</td>
                         <td id="money">0.00</td>
+                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
                     </tr>
                     <tr>
                         <td>Jim</td>
                         <td>Moriaty</td>
                         <td>jmoriaty@smart.com</td>
-                        <td>4026785002</td>
+                        <td>09091145390</td>
+                        <td id = "accountNo">4026785002</td>
                         <td id="money">20000.00</td>
+                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
                     </tr>
                     <tr>
                         <td>John</td>
                         <td>Watson</td>
                         <td>armydoctor@bakerstreet.com</td>
-                        <td>4026785003</td>
+                        <td>08139453207</td>
+                        <td id = "accountNo">4026785003</td>
                         <td id="money">2000.00</td>
+                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
                     </tr>
                     </table>
                 </div>
