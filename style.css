@@ -225,7 +225,7 @@ footer {
 
 .sidebar {
 	width:300px;
-	height: 500px;
+	height: 1000px;
 	background-color:grey; /*change the colors*/
 	float: left;
 } 
@@ -301,7 +301,7 @@ footer {
   margin-bottom: 12px;
 }
 
-#dummy, #dummy1, #dummy2 {
+#dummy, #dummy1, #dummy2{
 	display:none;
 	margin: 50px 350px;
 }
@@ -326,6 +326,10 @@ footer {
   width: 800px;
 }
 
+#dummy-accounts tr:hover{
+	cursor: pointer;
+	background-color: #e76432
+}
 
 /*admin account creation*/
 .account-creation p{
@@ -349,6 +353,10 @@ footer {
 .accTables tr:nth-child(even) {
   background-color: #dddddd;
   width: 100%;
+}
+
+.form #title {
+	margin-bottom: 15px;
 }
 
 /*Media Queries*/

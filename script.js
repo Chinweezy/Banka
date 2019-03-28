@@ -108,3 +108,10 @@ function deleteUser(r) {
     var i = r.parentNode.parentNode.rowIndex;
     document.getElementById("dummy-accounts").deleteRow(i);
 }
+
+
+function popUp() {
+  var popupWindow = null;
+  console.log("yo");
+  popupWindow = window.open("credit-debit.html")
+}
