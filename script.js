@@ -30,8 +30,10 @@ function loadAccPage() {
     var homepage = document.getElementById("homepage");
     var userAcc = document.getElementById("dummy");
     var bankAccounts = document.getElementById("dummy1");
+    var createAccounts = document.getElementById("adminAccCreation");
     homepage.style.display = "none";
     userAcc.style.display = "none";
+    createAccounts.style.display = "none"
     bankAccounts.style.display = "table";
 }
 
@@ -39,9 +41,58 @@ function loadUserAcc() {
     var homepage = document.getElementById("homepage");
     var userAcc = document.getElementById("dummy");
     var bankAccounts = document.getElementById("dummy1");
+    var createAccounts = document.getElementById("adminAccCreation");
     homepage.style.display="none";
     bankAccounts.style.display="none";
+    createAccounts.style.display = "none";
     userAcc.style.display="table";
+}
+
+function loadAccCreaction(){
+    var homepage = document.getElementById("homepage");
+    var userAcc = document.getElementById("dummy");
+    var bankAccounts = document.getElementById("dummy1");
+    var createAccounts = document.getElementById("adminAccCreation");
+    homepage.style.display="none";
+    bankAccounts.style.display="none";
+    userAcc.style.display="none";
+    createAccounts.style.display = "block"
+
+}
+/*staff dashboard*/
+
+function loadCreditPage() {
+    var homepage = document.getElementById("homepage");
+    var userAcc = document.getElementById("dummy");
+    var bankAccounts = document.getElementById("dummy1");
+    var payment= document.getElementById("creditOrDebit");
+    homepage.style.display="none";
+    bankAccounts.style.display="none";
+    userAcc.style.display="none";
+    payment.style.display = "block"
+}
+
+function loadUser() {
+    var homepage = document.getElementById("homepage");
+    var userAcc = document.getElementById("dummy");
+    var bankAccounts = document.getElementById("dummy1");
+    var payment= document.getElementById("creditOrDebit");
+    homepage.style.display="none";
+    bankAccounts.style.display="none";
+    payment.style.display = "none"
+    userAcc.style.display="table";
+
+}
+
+function loadAcc(){
+    var homepage = document.getElementById("homepage");
+    var userAcc = document.getElementById("dummy");
+    var bankAccounts = document.getElementById("dummy1");
+    var payment= document.getElementById("creditOrDebit");
+    homepage.style.display = "none";
+    userAcc.style.display = "none";
+    payment.style.display = "none"
+    bankAccounts.style.display = "table";
 }
 
 /*user-dashboard*/
@@ -106,7 +157,10 @@ function searchAccountRecord() {
 
 function deleteUser(r) {
     var i = r.parentNode.parentNode.rowIndex;
+    var x = confirm("Are you sure you want to delete this user?");
+    if (x == true) {
     document.getElementById("dummy-accounts").deleteRow(i);
+  }
 }
 
 
@@ -114,4 +168,15 @@ function popUp() {
   var popupWindow = null;
   console.log("yo");
   popupWindow = window.open("credit-debit.html")
+}
+
+function debitToCredit() {
+  var btnChange = document.getElementById("btnChange");
+  var debit = document.getElementById("debit");
+  var credit = document.getElementById("credit");
+  if (debit.checked == true) {
+    btnChange.value = "Debit"; 
+  }else {
+    btnChange.value = "Credit";
+  }
 }

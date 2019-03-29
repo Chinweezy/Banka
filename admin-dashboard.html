@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
 
-        <title>Welcome @admin</title>
+        <title>Admin Portal</title>
         <link rel = "stylesheet" href = "style.css"></link>
         <script src = "script.js"></script>
 
@@ -18,7 +18,7 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><button onclick = "signout()">Sign-out</button></li> <!--sign out page -->
+                        <li><a href = "#">Sign-out</a></li> <!--sign out page -->
                      </ul>
                 </nav>
            </div> 
@@ -30,20 +30,27 @@
                     <li><a onclick = "loadPage()">Home</a></li>
                     <li><a onclick = "loadUserAcc()">User Accounts</a></li>
                     <li><a onclick = "loadAccPage()">Bank accounts</a></li>
-                    <li class = "collapsible"><a>Create a staff / admin account</a></li>
-
-                    <div class = "collapsible-body">
-                    <li><a href = "adminAcc-creation.html" target = "_self">Admin Account</a></li>
-                    <li><a href = "adminAcc-creation.html" target = "_self">Staff Account</a></li>
-                    </div>
+                    <li><a onclick = "loadAccCreaction()">Create an account</a></li>
                 </ul>
             </div>
 
+            <div class = "account-creation" id = "adminAccCreation">
+                <p>You are creating a new user account</p>
+                <form class = "form" action = "">
+                    Admin/Staff:<input type = "radio" id = "createAcc">Admin</input>
+                    <input type = "radio" id = "createAcc">Staff</input><br>
+                    First Name:<input type = "text" placeholder = "First Name" required></input>
+                    Last Name:<input type = "text" placeholder = "Last Name" required></input>
+                    Email:<input type = "email" placeholder = "Enter email" required></input>
+                    Password:<input type = "password" placeholder = "Enter password" minlength = "8" required></input> <!--admin will use the default password "Banka2019" to create account-->
+                    <input type = "submit" value = "Create"></input>
+                </form>
+            </div>
 
             <div class = "content">
                 <div id = "homepage">
-                <h3>Welcome, @admin</h3>
-                    <form id = "uploadPic"action = " ">
+                <h3>Welcome, {First Name of Admin}</h3>
+                    <form id = "uploadPic" action = " ">
                         Upload profile picture<br><input type = "file" name = "Upload picture file"> </input><br>
                         <input type = "submit" name = "UploadBtn" value = "Upload"></input>
                     </form> 
@@ -51,44 +58,48 @@
 
                 <div id = "dummy">
                     <input type="text" id="myInput" onkeyup="searchAccountRecord()" placeholder="        First Name" >
-                    <table id = "dummy-accounts" style = "width:130%">
+                    <table id = "dummy-accounts">
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
-                        <th>Acount No</th>
+                        <th>Role</th>
+                        <th>Status</th>
                     </tr>
                     <tr>
-                        <td>Sherlock</td>
-                        <td>Holmes</td>
-                        <td>highfunctioningsociopath@genius.com</td>
+                        <td>Sheldon</td>
+                        <td>Cooper</td>
+                        <td>lee.cooper@bazinga.net</td>
                         <td>08058694545</td>
-                        <td id = "accountNo">4026785001</td>
-                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
+                        <td>Admin</td>
+                        <td>Activated</td>
+                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
                     </tr>
                     <tr>
-                        <td>Jim</td>
-                        <td>Moriaty</td>
-                        <td>jmoriaty@smart.com</td>
+                        <td>Leonard</td>
+                        <td>Hofstadter</td>
+                        <td>sheldons-best-friend@gmail.com</td>
                         <td>09091145390</td>
-                        <td id = "accountNo">4026785002</td>
-                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
+                        <td>Staff</td>
+                        <td>Activated</td>
+                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
                     </tr>
                     <tr>
-                        <td>John</td>
-                        <td>Watson</td>
-                        <td>armydoctor@bakerstreet.com</td>
+                        <td>Leonard</td>
+                        <td>Nimoy</td>
+                        <td>spock@startrek.francise</td>
                         <td>08139453207</td>
-                        <td id = "accountNo">4026785003</td>
-                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
+                        <td>Admin</td>
+                        <td>Dectivated</td>
+                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
                     </tr>
                     </table>
                 </div>
 
                 <div id = "dummy1">
                     <input type="text" id="myInput" onkeyup="searchAccountRecord()" placeholder="        Account Number, First Name" >
-                    <table id = "dummy-accounts" style = "width:130%">
+                    <table id = "dummy-accounts">
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
@@ -104,7 +115,7 @@
                         <td>08058694545</td>
                         <td id = "accountNo">4026785001</td>
                         <td id="money">0.00</td>
-                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
+                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
                     </tr>
                     <tr>
                         <td>Jim</td>
@@ -113,7 +124,7 @@
                         <td>09091145390</td>
                         <td id = "accountNo">4026785002</td>
                         <td id="money">20000.00</td>
-                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
+                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
                     </tr>
                     <tr>
                         <td>John</td>
@@ -122,7 +133,7 @@
                         <td>08139453207</td>
                         <td id = "accountNo">4026785003</td>
                         <td id="money">2000.00</td>
-                        <td><input type="button" value="Delete user" onclick="deleteUser(this)"></input></td>
+                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
                     </tr>
                     </table>
                 </div>
