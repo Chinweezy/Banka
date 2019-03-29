@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+    	<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <title>Open an Account</title>
+        <link rel = "stylesheet" href = "style.css"
+
+    </head>
+
+    <body>
+        <header>
+            <div class = "container">
+                <div id = "brandName">
+                    <h1><span class = "highlight">Banka</span> Banking App</h1>
+                </div>
+        		<nav>
+                    <ul>
+                        <li><a href = "index.html" target = "_blank">Home</a></li>
+                        <li><a href = "Login.html" target = "_blank">Login</a></li>
+                        <li><a href = "Signup.html" target = "_blank">Sign up</a></li>
+                         <li><a href = "adminLogin.html" target = "_blank">Admin</a></li>
+                        <li><a href = "staffLogin.html" target = "_blank">Staff(Cashier)</a></li>
+                     </ul>
+                </nav>
+    	   </div> 
+        </header>
+
+
+        <section>
+            <div class = "open-account">
+                <p>You are opening an instant account</p>
+            </div>
+   
+            <form class = "form"  id = "accForm" action = "">
+                Title: <select id = "title">
+                            <option>--select--</option>
+                            <option>Dr.</option>
+                            <option>Mr.</option>
+                            <option>Mrs.</option>
+                            <option>Miss.</option>
+                        </select><br>
+                First Name:<input type = "text" placeholder = "Enter First Name..." required></input>
+                Last Name:<input type = "text" placeholder = "Enter Last Name..." required></input>
+                Other name(s):<input type = "text" placeholder = "Other names..." required></input>
+                Gender:<input type = "radio">Female</input>
+                <input type = "radio">Male</input><br>
+                Date of Birth:<input type = "date" placeholder = "Enter date of birth"></input>
+                Phone no:<input type = "phone" placeholder = "080-xxxxxxxx"></input>
+                Email:<input type = "email" placeholder = "Enter email"></input>
+                Address of residence: <input type = "address" placeholder = "Enter Address"></input>
+                State of residence: <input type = "text" placeholder = "Enter state of residence"></input>
+                <input type = "submit"></input>
+            </form>
+        </section>
+
+        <section>
+            <footer>
+                <p>Banka Banking App, Copyright &copy; 2019</p>
+            </footer>
+        </section>
+    </body>
+</html>
