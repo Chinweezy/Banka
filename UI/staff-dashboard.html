@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
 
-        <title>Admin Portal</title>
-        <link rel = "stylesheet" href = "style.css"></link>
+        <title>Staff(Cashier) Portal</title>
+        <link rel = "stylesheet" href = "css/style.css" type = "text/css"></link>
         <script src = "script.js"></script>
 
     </head>
@@ -28,9 +28,9 @@
             <div class = "sidebar"> 
                 <ul>
                     <li><a onclick = "loadPage()">Home</a></li>
-                    <li><a onclick = "loadUserAcc()">User Accounts</a></li>
-                    <li><a onclick = "loadAccPage()">Bank accounts</a></li>
-                    <li><a onclick = "loadAccCreaction()">Create an account</a></li>
+                    <li><a onclick = "loadUser()">User Accounts</a></li>
+                    <li><a onclick = "loadAcc()">Bank accounts</a></li>
+                    <li><a onclick = "loadCreditPage()">Credit / Debit User</a></li>
                 </ul>
             </div>
 
@@ -47,10 +47,27 @@
                 </form>
             </div>
 
+            <div id = "creditOrDebit">
+                <p></p>
+                <form class = "form" id = "creditForm">
+                Debit <input type = "radio" id = "debit" name = "creditDebit" onclick = "debitToCredit()" checked = "checked">
+                Credit <input type = "radio" id = "credit" name = "creditDebit" onclick = "debitToCredit()"><br>
+                Transaction Type <select id = "title">
+                                    <option>--select--</option>
+                                    <option>Deposit</option>
+                                    <option>Withdrawal</option>
+                                </select><br>
+                Account Number <input type = "number" minlength = "10" placeholder = "Enter client's account number" required>
+                Transaction ID <input type = "number"> <!--generate automatically-->
+                Amount<input type = "number" placeholder = "Enter amount">
+                <input type =  "submit" value = "Debit" id = "btnChange">
+                </form>
+            </div>
+
             <div class = "content">
                 <div id = "homepage">
-                <h3>Welcome, {First Name of Admin}</h3>
-                    <form id = "uploadPic" action = " ">
+                <h3>Welcome, {First Name of Staff}</h3>
+                    <form id = "uploadPic"action = " ">
                         Upload profile picture<br><input type = "file" name = "Upload picture file"> </input><br>
                         <input type = "submit" name = "UploadBtn" value = "Upload"></input>
                     </form> 
