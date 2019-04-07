@@ -1,0 +1,37 @@
+{
+  "name": "banka",
+  "version": "1.0.0",
+  "description": "My repository of Banka: a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals. This app is meant to support a single bank, where users can signup and create bank accounts online, but must visit the branch to withdraw or deposit money.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d https://github.com/Chinweezy/Banka.git",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chinweezy/Banka.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chinweezy/Banka/issues"
+  },
+  "homepage": "https://github.com/Chinweezy/Banka#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  }
+}

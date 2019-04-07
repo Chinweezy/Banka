@@ -119,7 +119,7 @@ header nav{
 
 #showcase{
 	min-height: 500px;
-	background: url("openAcc3.jpg") no-repeat;
+	background: url("../openAcc3.jpg") no-repeat;
 	background-size: cover;
 	text-align: center;
 	color: #ffffff;
@@ -299,7 +299,7 @@ footer {
 /*admin dashboard*/
 
 #myInput {
-  background: url("search-icon2.png") no-repeat;
+  background: url("../search-icon2.png") no-repeat;
   width: 250px;
   font-size: 12px;
   padding: 10px;
