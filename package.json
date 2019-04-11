@@ -1,12 +1,35 @@
 {
   "name": "banka",
   "version": "1.0.0",
-  "description": "My repository of Banka: a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals. This app is meant to support a single bank, where users can signup and create bank accounts online, but must visit the branch to withdraw or deposit money.",
-  "main": "script.js",
+  "description": "A lightweight banking application",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d https://github.com/Chinweezy/Banka.git",
-    "start": ""
+    "test": "nyc mocha ./test/server/test.js --require @babel/register --exit --watch",
+    "start:dev": "DEBUG=http nodemon server.js --exec babel-node"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "debug": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.11",
+    "nyc": "^13.3.0"
   },
   "repository": {
     "type": "git",
@@ -17,21 +40,5 @@
   "bugs": {
     "url": "https://github.com/Chinweezy/Banka/issues"
   },
-  "homepage": "https://github.com/Chinweezy/Banka#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.4.3",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "mocha": "^6.0.2"
-  },
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "morgan": "^1.9.1"
-  }
+  "homepage": "https://github.com/Chinweezy/Banka#readme"
 }
