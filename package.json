@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "nyc mocha ./test/server/test.js --require @babel/register --exit --watch",
-    "start:dev": "DEBUG=http nodemon server.js --exec babel-node"
+    "start:dev": "nodemon server.js --exec babel-node"
   },
   "dependencies": {
     "express": "^4.16.4",

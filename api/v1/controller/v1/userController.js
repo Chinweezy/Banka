@@ -1,6 +1,6 @@
 import users from '../../models/user';
 
-const userController =  {
+const userController = {
   // Get all users
   list(req, res) {
     res.status(200).send(users);
@@ -8,45 +8,38 @@ const userController =  {
 
   // Get a single user
   retrieve(req, res) {
-    const { id } = req.params.id;
-    const findUser = users.find(user => user.id === id);
+    const { id } = req.params;
+    const findUser = users.find(user => user.id === parseInt(id, 10));
     if (findUser) {
-      res.status(200).send(findUser)
-    };
+      res.status(200).send(findUser);
+      return;
+    }
     res.status(400).send({
       error: 'User record not found',
-    })
+    });
   },
 
+  // Create a user account
   create(req, res) {
-    const {firstName, lastName, email, password, confirmPassword} = req.body;
+    const {
+      firstName, lastName, email, password,
+    } = req.body;
     if (!firstName) {
-      res.status(400).send({
-        error: 'First name is required',
-      });
+      res.status(400).send({ error: 'First name required' });
     } if (!lastName) {
-      res.status(400).send({
-        error: 'Last name is required',
-      });
+      res.status(400).send({ error: 'Last name required' });
     } if (!email) {
-      res.status(400).send({
-        error: 'Email is required',
-      });
+      res.status(400).send({ error: 'Email required' });
     } if (!password) {
-      res.status(400).send({
-        error: 'You have not entered your password',
-      });
-    } if (password !== confirmPassword) {
-      res.status(400).send({
-        error: 'Passwords do not match',
-      });
+      res.status(400).send({ error: 'Password required' });
     }
-    users.push(req.body)
-    const result = users.filter(user => id === user.id);
-    res.status(200).send(result);
-  }
+    users.push(req.body);
+    res.status(200).send(req.body);
+  },
+};
+export default userController;
 
-  static signin(req, res) {
+/* static signin(req, res) {
     if (req.body.firstName !== users.firstName) {
       return res.status(400).send({
         status: 400,
@@ -83,6 +76,4 @@ const userController =  {
       message: 'Sign in successful',
       data: newSignin,
     });
-  }
-}
-export default userController;
+  } */
