@@ -2,19 +2,20 @@ import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import userRoute from './api/v1/routes/users';
-/* import accountsRoutes from './api/v1/routes/accounts'; */
+import accountRoute from './api/v1/routes/accounts';
 
 const app = express();
-
-userRoute(app);
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('*', (req, res) =>) {
-  res.status(400).send({message: 'Bazinga! Wrong route'});
-};
-/* app.use('/accounts', accountsRoutes); */
+
+userRoute(app);
+accountRoute(app);
+
+app.use('*', (req, res) => {
+  res.status(400).send({ message: 'Bazinga! Wrong route' });
+});
 
 app.use((req, res, next) => {
   const err = new Error('Not found');
