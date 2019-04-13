@@ -11,69 +11,60 @@ const userController = {
     const { id } = req.params;
     const findUser = users.find(user => user.id === parseInt(id, 10));
     if (findUser) {
-      res.status(200).send(findUser);
+      res.status(200).send({
+        status: 200,
+        data: findUser,
+      });
       return;
     }
     res.status(400).send({
+      status: 400,
       error: 'User record not found',
     });
   },
 
   // Create a user account
   create(req, res) {
-    const {
-      firstName, lastName, email, password,
-    } = req.body;
-    if (!firstName) {
-      res.status(400).send({ error: 'First name required' });
-    } if (!lastName) {
-      res.status(400).send({ error: 'Last name required' });
-    } if (!email) {
-      res.status(400).send({ error: 'Email required' });
-    } if (!password) {
-      res.status(400).send({ error: 'Password required' });
-    }
-    users.push(req.body);
-    res.status(200).send(req.body);
-  },
-};
-export default userController;
-
-/* static signin(req, res) {
-    if (req.body.firstName !== users.firstName) {
-      return res.status(400).send({
-        status: 400,
-        error: 'You have entered the wrong first name',
-      });
-    } if (req.body.lastName !== users.lastName) {
-      return res.status(400).send({
-        status: 400,
-        error: 'You have entered the wrong last name',
-      });
-    } if (req.body.email !== users.email) {
-      return res.status(400).send({
-        status: 400,
-        error: 'You have entered the wrong email',
-      });
-    } if (req.body.password !== users.password) {
-      return res.status(400).send({
-        status: 400,
-        error: 'You have entered the wrong password',
-      });
-    }
-    const newSignin = {
-      token: '45erkjherht45495783',
-      id: users.id,
+    const newUser = {
+      id: users.length + 1,
+      email: req.body.email,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      email: req.body.email,
       password: req.body.password,
-      type: 'client',
-      isAdmin: false,
+      confirmPassword: req.body.confirmPssword,
+      type: req.body.type, // client or staff
+      isAdmin: req.body.isAdmin, // true = staff, false = client
     };
-    return res.status(201).send({
+
+    const display = {};
+    // eslint-disable-next-line quotes
+    display.token = "45erkjherht45495783";
+    display.id = newUser.id;
+    display.firstName = newUser.firstName;
+    display.lastName = newUser.lastName;
+    display.email = newUser.email;
+
+    const isEmpty = Object.values(newUser).every(x => (x === null || x === '""'));
+    if (!req.body.firstName) {
+      res.status(400).send({ status: 400, error: 'First name required' });
+    } if (!req.body.lastName) {
+      res.status(400).send({ status: 400, error: 'Last name required' });
+    } if (!req.body.email) {
+      res.status(400).send({ status: 400, error: 'Email required' });
+    } if (!req.body.password) {
+      res.status(400).send({ status: 400, error: 'Password required' });
+    } if (req.body.password !== req.body.confirmPassword) {
+      res.status(400).send({ status: 400, error: 'Passwords do not match' });
+    } if (isEmpty === true) {
+      res.status(400);
+      return;
+    }
+    users.push(newUser);
+    res.status(201).json({
       status: 201,
-      message: 'Sign in successful',
-      data: newSignin,
+      data: display,
     });
-  } */
+  },
+};
+
+export default userController;
