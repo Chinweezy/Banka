@@ -1,51 +1,55 @@
 import accounts from '../../models/accounts';
-import jwt from 'jsonwebtoken';
-import users from '../../models/user'
+import users from '../../models/user';
 
 
-const accountsController = {
+const accountController = {
   // Get all accounts
   list(req, res) {
-    res.status(200).send(accounts);
+    res.status(200).send({ status: 200, data: accounts });
   },
 
   create(req, res) {
-    const user = {
+    const newAccount = {
       id: accounts.length + 1,
-      accountNumber: req.body.accountNumber,
+      accountNumber: accounts[accounts.length - 1][1] + 1,
       CreatedOn: new Date(),
-      owner: req.body.owner,
+      // eslint-disable-next-line no-use-before-define
+      owner: findUser.id,
       type: req.body.type,
       status: req.body.status,
       balance: req.body.openingbalance,
     };
-    const newAccount = {
-      accountNumber: user.accountNumber,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      type: req.body.type,
-      openingBalance: req.body.openingBalance,
-    };
-    if (!req.body.firstName) {
-      res.status(400).send({ error: 'First name is required' });
-    } if (!req.body.lastName) {
-      res.status(400).send({ error: 'Last name is required' });
-    } if (!req.body.email) {
-      res.status(400).send({ error: 'Email is required' });
-    } if (!req.body.password) {
-      res.status(400).send({ error: 'Password is required' });
+
+    const display = {};
+    display.id = newAccount.id;
+    display.accountNumber = newAccount.accountNumber;
+    display.firstName = req.body.firstName;
+    display.lastName = req.body.lastName;
+    display.email = req.body.email;
+    display.openingBalance = req.body.openingBalance;
+
+    const findUser = users.find(user => user.email === display.email);
+    console.log(findUser);
+
+    const isEmpty = Object.values(newAccount).every(x => (x === null || x === '""'));
+    if (!req.body.firstName) res.status(400).send({ error: 'First name is required' });
+    if (!req.body.lastName) res.status(400).send({ error: 'Last name is required' });
+    if (!req.body.email) res.status(400).send({ error: 'Email is required' });
+    if (!req.body.password) res.status(400).send({ error: 'Password is required' });
+    if (isEmpty === true) {
+      res.status(400);
+      return;
     }
-    accounts.push(user);
-    res.status(201).send({
+    accounts.push(newAccount);
+    res.status(201).json({
       status: 201,
-      data: newAccount,
+      data: display,
     });
   },
 
   delete(req, res) {
     const { accountNumber } = req.params;
-    const findAccountNum = accounts.find(account => account.accountNumber === parseInt(accountNumber, 10));
+    const findAccountNum = accounts.find(acc => acc.accountNumber === parseInt(accountNumber, 10));
     const index = accounts.indexOf(findAccountNum);
     if (findAccountNum) {
       accounts.splice(index, 1);
@@ -56,4 +60,4 @@ const accountsController = {
   },
 };
 
-export default accountsController;
+export default accountController;
