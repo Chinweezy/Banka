@@ -1,8 +1,19 @@
 language: node_js
-node_js:
-  - '0.11'
-  - '0.10'
+env:
+  global:
+    - CC_TEST_REPORTER_ID = 825c9f17be9cd3634e4aabbdc72f78a6e5009edc204cba5dadc996135c7332e3
+    - NODE-ENV = test
 
+node_js: "10.13.0"
+
+before_script:
+  - yarn global add nyc 
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - npm run coveralls
+  - npm run coverage
+  
 after_success:
-  - .node_modules/.bin/jscoverage lib lib-cov
-  - /node_modules/.bin/mocha test/**.js -R mocha-lcov-reporter | .node_modules/coveralls/bin/coverals.js
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
