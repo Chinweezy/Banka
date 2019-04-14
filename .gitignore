@@ -109,3 +109,7 @@ typings/
 
 # Ignore native extensions in the node_modules folder 
 node_modules/
+
+dist
+
+.vscode

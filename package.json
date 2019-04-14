@@ -4,8 +4,10 @@
   "description": "A lightweight banking application",
   "main": "app.js",
   "scripts": {
-    "test": "nyc mocha ./test/server/test.js --require @babel/register --exit --watch",
-    "start:dev": "nodemon server.js --exec babel-node"
+    "test": "nyc mocha ./test/server/*.js --timeout 2000 --require @babel/register --exit --watch",
+    "start:dev": "nodemon server.js --exec babel-node",
+    "coverage": "nyc report --reporter=test-lcov | coveralls",
+    "coveralls": "nyc -reporter=lcov --reporter=test-lcov npm test"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

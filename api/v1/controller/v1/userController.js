@@ -3,7 +3,7 @@ import users from '../../models/user';
 const userController = {
   // Get all users
   list(req, res) {
-    res.status(200).send(users);
+    res.status(200).send({ status: 200, data: users });
   },
 
   // Get a single user
