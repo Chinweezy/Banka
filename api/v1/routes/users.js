@@ -1,6 +1,6 @@
 import userController from '../controller/v1/userController';
 
-const UserRoute = (app) => {
+const userRoute = (app) => {
   app.get('/api/v1/users', userController.list);
   app.post('/api/v1/auth/signup', userController.create);
   app.get('/api/v1/users/:id', userController.retrieve);
@@ -49,4 +49,4 @@ const UserRoute = (app) => {
   }); */
 };
 
-export default UserRoute;
+export default userRoute;
