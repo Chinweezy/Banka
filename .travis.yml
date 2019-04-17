@@ -2,12 +2,11 @@ language: node_js
 env:
   global:
     - CC_TEST_REPORTER_ID = 825c9f17be9cd3634e4aabbdc72f78a6e5009edc204cba5dadc996135c7332e3
-    - NODE-ENV = test
 
-node_js: "10.13.0"
+node_js: 
+  - "10.13.0"
 
 before_script:
-  - yarn global add nyc 
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build

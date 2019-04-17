@@ -277,33 +277,32 @@ footer {
 	cursor: pointer;
 }
 
-.userContent {
-	width: auto;
-	height: 100%;
-	background-color: #ffffff;
+.flex-container {
+	display: flex;
+	flex-direction: row;
 }
 
-.userContent p {
+#userContent {
+	margin: 20px;
+} 
+
+/* .userContent p {
 	text-align: center;
 	font-size: 15px;
 
-}
+} */
 
 #uploadPic {
-	margin:0 0 0 0;
-	float: right;
+	margin-top: 100px;
 	display: block;
 	font-family: 'serif';
 	font-size: 15px;
 }
 
-#uploadPic input {
-	margin:5px;
-}
-
 #uploadPic input[text = "file"], input[text = "submit"] {
 	font-family: serif;
-}
+	padding: 20px;
+} 
 
 #dummy2 input[type = "date"] {
 	margin-bottom: 20px;

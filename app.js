@@ -1,12 +1,15 @@
+// import dotenv from 'dotenv';
 import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import userRoute from './api/v1/routes/users';
 import accountRoute from './api/v1/routes/accounts';
 
+// dotenv.config();
+
 const app = express();
 
-const port = parseInt(process.env.PORT, 10) || 3000;
+const port = process.env.PORT || 3000;
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
