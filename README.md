@@ -9,15 +9,17 @@ My repository of Banka: a light-weight core banking application that powers bank
 
 ## Installing / Getting Started
 
+To run this application, you need to have Node.js, and git(to clone the repo) installed. Then follow the instructions to
+it up and running
+
+- clone the repo using
 ```shell
-npm install Banka 
-npm start
+git clone https://github.com/Chinweezy/Banka.git
+npm install
 ```
 
-Here you should say what actually happens when you execute the code above.
-
 ### Initial Configuration
-
+cd Banka/
 npm install
 
 ## Developing

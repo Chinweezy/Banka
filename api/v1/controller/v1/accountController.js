@@ -1,5 +1,5 @@
 import accounts from '../../models/accounts';
-import users from '../../models/user';
+// import users from '../../models/user';
 
 
 class accountController {

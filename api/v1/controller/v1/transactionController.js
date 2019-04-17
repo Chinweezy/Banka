@@ -1,12 +1,12 @@
 import transactions from '../../models/transactions';
 
-const transactionController = {
+class transactionController {
   // Get all users
-  list(req, res) {
+  static list(req, res) {
     res.status(200).send({ status: 200, data: transactions });
-  },
+  }
 
-  debit(req, res) {
+  static debit(req, res) {
     let add = '';
 
     const newTransaction = {};
@@ -48,8 +48,7 @@ const transactionController = {
       status: 201,
       data: newTransaction,
     });
-  },
-
-};
+  }
+}
 
 export default transactionController;
