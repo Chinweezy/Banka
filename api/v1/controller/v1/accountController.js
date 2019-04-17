@@ -2,15 +2,15 @@ import accounts from '../../models/accounts';
 import users from '../../models/user';
 
 
-const accountController = {
+class accountController {
   // Get all accounts
-  list(req, res) {
+  static list(req, res) {
     res.status(200).send({ status: 200, data: accounts });
-  },
+  }
 
-  create(req, res) {
+  /* static create(req, res) {
     const newAccount = {
-      id: accounts.length + 1,
+      // id: accounts.length + 1,
       accountNumber: accounts[accounts.length - 1][1] + 1,
       CreatedOn: new Date(),
       // eslint-disable-next-line no-use-before-define
@@ -21,7 +21,7 @@ const accountController = {
     };
 
     const display = {};
-    display.id = newAccount.id;
+    // display.id = newAccount.id;
     display.accountNumber = newAccount.accountNumber;
     display.firstName = req.body.firstName;
     display.lastName = req.body.lastName;
@@ -29,7 +29,6 @@ const accountController = {
     display.openingBalance = req.body.openingBalance;
 
     const findUser = users.find(user => user.email === display.email);
-    console.log(findUser);
 
     const isEmpty = Object.values(newAccount).every(x => (x === null || x === '""'));
     if (!req.body.firstName) res.status(400).send({ error: 'First name is required' });
@@ -45,9 +44,9 @@ const accountController = {
       status: 201,
       data: display,
     });
-  },
+} */
 
-  delete(req, res) {
+  static delete(req, res) {
     const { accountNumber } = req.params;
     const findAccountNum = accounts.find(acc => acc.accountNumber === parseInt(accountNumber, 10));
     const index = accounts.indexOf(findAccountNum);
@@ -57,7 +56,7 @@ const accountController = {
       return;
     }
     res.status(400).send({ message: 'You entered a wrong account number' });
-  },
-};
+  }
+}
 
 export default accountController;

@@ -1,13 +1,13 @@
 import users from '../../models/user';
 
-const userController = {
+class userController {
   // Get all users
-  list(req, res) {
+  static list(req, res) {
     res.status(200).send({ status: 200, data: users });
-  },
+  }
 
   // Get a single user
-  retrieve(req, res) {
+  static retrieve(req, res) {
     const { id } = req.params;
     const findUser = users.find(user => user.id === parseInt(id, 10));
     if (findUser) {
@@ -17,14 +17,14 @@ const userController = {
       });
       return;
     }
-    res.status(400).send({
+    res.status(404).send({
       status: 400,
       error: 'User record not found',
     });
-  },
+  }
 
   // Create a user account
-  create(req, res) {
+  static create(req, res) {
     const newUser = {
       id: users.length + 1,
       email: req.body.email,
@@ -64,7 +64,36 @@ const userController = {
       status: 201,
       data: display,
     });
-  },
-};
+  }
+
+  static signin(req, res) {
+    const signrequest = {
+      email: req.body.email,
+      password: req.body.password,
+    };
+    const findUser = users.find(user => user.email === signrequest.email);
+
+    const signin = {};
+    // eslint-disable-next-line quotes
+    signin.token = "45erkjherht45495783";
+    signin.firstName = findUser.firstName;
+    signin.lastName = findUser.firstName;
+    signin.email = findUser.email;
+      
+    const isEmpty = Object.values(signrequest).every(x => (x === null || x === '""'));
+
+    if (signrequest.password !== findUser.password) {
+      res.status(400).send({ status: 400, error: 'You have not entered the right password' });
+    }
+    if (isEmpty === true) {
+      res.status(400);
+      return;
+    }
+    res.status(200).json({
+      status: 200,
+      data: signin,
+    });
+  }
+}
 
 export default userController;
