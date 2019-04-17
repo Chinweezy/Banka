@@ -5,12 +5,13 @@
         <meta name="viewport" content="width=device-width">
 
         <title>Admin Portal</title>
-        <link rel = "stylesheet" href = "css/style.css" type = "text/css"></link>
+        <link rel = "stylesheet" href = "css/style.css" type = "text/css">
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
         <script src = "script.js"></script>
 
     </head>
 
-    <body>
+    <body class = "Site">
         <header>
             <div class = "container">
                 <div id = "brandName">
@@ -24,7 +25,7 @@
            </div> 
         </header>
 
-        <div class = "container">
+        <div class = "container Site-content">
             <div class = "sidebar"> 
                 <ul>
                     <li><a onclick = "loadPage()">Home</a></li>
@@ -47,9 +48,9 @@
                 </form>
             </div>
 
-            <div class = "content">
+            <div class = "userpage">
                 <div id = "homepage">
-                <h3>Welcome, {First Name of Admin}</h3>
+                    <h3>Welcome, {First Name of Admin}</h3>
                     <form id = "uploadPic" action = " ">
                         Upload profile picture<br><input type = "file" name = "Upload picture file"> </input><br>
                         <input type = "submit" name = "UploadBtn" value = "Upload"></input>
@@ -162,7 +163,6 @@
                     </tr>
                     </table>
                 </div>
-
             </div>
         </div>
 

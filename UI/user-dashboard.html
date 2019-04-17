@@ -6,11 +6,12 @@
 
         <title>Client Portal</title>
         <link rel = "stylesheet" href = "css/style.css" type = "text/css"></link>
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
         <script src = "script.js"></script>
 
     </head>
 
-    <body>
+    <body class = "Site">
         <header>
             <div class = "container">
                 <div id = "brandName">
@@ -24,7 +25,7 @@
            </div> 
         </header>
 
-        <div class = "container">
+        <div class = "Site-content container">
             <div class = "sidebar"> 
                 <ul>
                     <li><a onclick = "loadUserPage()">Home</a></li>
@@ -32,13 +33,21 @@
                     <li><a onclick = "loadTransHistory()">Transaction history</a></li>
                 </ul>
             </div>
-            <div class = "content">
-                <div  id = "homepage">
-                <h3>Welcome, {First Name of Client}</h3>
-                    <form id = "uploadPic"action = " ">
-                        Upload profile picture<br><input type = "file" name = "Upload picture file"> </input><br>
-                        <input type = "submit" name = "UploadBtn" value = "Upload"></input>
-                    </form> 
+
+            <div id = "userContent">
+                <div  id = "homepage" >
+                    <h3>Welcome, Chinwe</h3>
+                        <form id = "uploadPic" action = " ">Upload profile picture<br>
+                        <input type = "file" name = "Upload picture file"> </input><br>
+                         <input type = "submit" name = "UploadBtn" value = "Upload"></input>
+                        </form> 
+                </div>
+
+                <div id = "profile">
+                    <p>Name</p>
+                    <p>Birthday</p>
+                    <p>Gender</p>
+                    <p>Address</p>
                 </div>
 
                 <div id = "dummy">
@@ -104,11 +113,7 @@
                         <td id="money">500.00</td>
                         <td id="money"></td>
                     </table>
-                </div>
-
-                <div>
-                </div>
-                
+                </div>            
             </div>
         </div>
 
