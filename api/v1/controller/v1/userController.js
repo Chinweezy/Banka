@@ -79,7 +79,7 @@ class userController {
     signin.firstName = findUser.firstName;
     signin.lastName = findUser.firstName;
     signin.email = findUser.email;
-      
+
     const isEmpty = Object.values(signrequest).every(x => (x === null || x === '""'));
 
     if (signrequest.password !== findUser.password) {

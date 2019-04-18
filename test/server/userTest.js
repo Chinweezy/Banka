@@ -65,7 +65,6 @@ describe('Testing user signup controller', () => {
       .send({
         firstName: 'chinwe',
         lastName: 'ugoji',
-        email: 'test@test.com',
         password: 'Welcome@2019',
         confirmPassWord: 'Welcome@2019',
         type: 'client',
@@ -90,7 +89,7 @@ describe('Testing user signup controller', () => {
         isAdmin: false,
       })
       .end((err, res) => {
-        res.should.have.status(404);
+        res.should.have.status(400);
         done();
       });
   });
