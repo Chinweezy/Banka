@@ -1,12 +1,13 @@
 body {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Cormorant Garamond', serif;
 	font-size: 15px;
-	line-height: 1.5;
-	padding:0;
-	background-color: #f4f4f4;
+	height: 100%;
+	/* line-height: 1.5; */
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	background-color: #ffffff;
 }  
-
-
 
 /*global*/
 .container{
@@ -42,7 +43,6 @@ ul {
 }
 
 .form input{
-	font-family: "Helvetica", Arial;
 	outline: 1;
 	background: #f2f2f2;
 	width: 100%;
@@ -54,9 +54,8 @@ ul {
 }
 
 .form input[type="submit"]{
-	margin-bottom: 20px;
-	margin-top: 20px;
-	width: 100%;
+	margin:  20px 0 20px 0;
+	width: 50%;
 	height: 40px;
 	background: #cc0000;
 	border:none;
@@ -65,6 +64,7 @@ ul {
 	font-family: sans-serif;
 	text-transform: uppercase;
 	cursor: pointer;
+	border-radius: 45px;
 }
 
 .form input[type="submit"]:hover, input[type="submit"]:focus{
@@ -76,12 +76,14 @@ header{
 	background: #19194d;
 	color: #ffffff;
 	padding-top: 30px;
-	min-height: 70px;
+	height: 70px;
 	border-bottom: #cc0000 3px solid;
 }
 
 header #brandName {
 	float:left;
+	align-items: center;
+	justify-content: center;
 }
 
 header #brandName h1{
@@ -101,11 +103,9 @@ header a{
  header a:hover{
  	color: #cccccc;
  	font-weight: bold;
-
  }  
 
 header li{
-	float: left;
 	display: inline;
 	padding: 0 15px 0 15px;
 }
@@ -117,31 +117,46 @@ header nav{
 
 /*showcase*/
 
-#showcase{
-	min-height: 500px;
-	background: url("openAcc3.jpg") no-repeat;
-	background-size: cover;
+.Site {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+  }
+  
+  .Site-content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+  }
+
+.content {
 	text-align: center;
 	color: #ffffff;
+	background: linear-gradient(
+		#00000073, 
+		#00000073
+	  ), url('../images/bg-image.png') no-repeat; 
+	background-size: cover;
 }
 
-#showcase h1{
+
+.content h1{
 	margin-top: 100px;
 	font-size: 25px;
 	margin-bottom: 10px;
 }
 
-#showcase h4, p{
+.content h4, p{
 	font-size: 18px;
 }
 
-
 .AccountBtn {
 	padding-left: 10px;
-	padding-right : 10px;
+	padding-right: 10px;
 	margin-top: 20px;
 	width: 20%;
 	height: 40px;
+	border-radius: 25px;
 	background: #cc0000;
 	border:none;
 	color:#ffffff;
@@ -150,17 +165,13 @@ header nav{
 
 }
 
-.AccountBtn:hover{
-
-}
-
 /*footer*/
 footer {
-	min-height: 70px;
 	background-color: #19194d;
 	color: #ffffff;
-	text-align: center;
-	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	border-top: #cc0000 3px solid;
 }
 
@@ -186,6 +197,10 @@ footer {
 
 /*Login*/
 
+.background {
+	background: url("../images/henry-co-744456-unsplash.jpg") no-repeat;
+	background-size: contain;
+}
 .login-page{
 	width:360px;
 	padding: 5px 0 0;
@@ -194,15 +209,15 @@ footer {
 
 .login-page h1{
 	text-align: center;
-	margin:0 0 0 0;
+	margin:15 0 0 0;
 	font-weight: bold;
-	font-size: 25px;
-	font-family: Helvetica;
+	font-size: 20px;
+	font-family: serif;
 }
 
 .login-page .message {
 	font-size: 15px;
-	font-family: Arial;
+	font-family: serif;
 }
 
 /*AccountCreation*/
@@ -237,8 +252,7 @@ footer {
 
 .sidebar {
 	width:300px;
-	height: 1000px;
-	background-color:#909090; 
+	background-color:#8187a3; 
 	float: left;
 } 
 
@@ -246,7 +260,7 @@ footer {
 	padding-left: 20px;
 	color: #cccccc;
 	display: block;
-	padding: 10px;
+	padding: 15px;
 	box-sizing:border-box;
 	border-bottom: 1px solid #282828;
 
@@ -264,23 +278,85 @@ footer {
 	cursor: pointer;
 }
 
-.content {
-	width: auto;
-	height: 500px;
-	background-color: #f4f4f4;
+img {
+	border-radius: 100px;
+	height: 180px;
+	width: 180px;
+}
+.flex-container {
+	display: flex;
+	flex-direction: row;
 }
 
-.content p {
+#userContent {
+	margin: 70px;
+	margin-top: 20px;
+} 
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+} 
+.column {
+	min-width: 300px;
+	padding: 0 20px 20px 20px;
+	margin-top: 20px;
+	flex-flow: 1; 
+	flex-basis: 20%;
+  }
+
+.card-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border: 1px solid white;
+	box-sizing: border-box;
+
+} 
+
+.profile-container {
+	display: flex;
+	flex-direction: row;
+} 
+ 
+.profilevalue {
+	margin-left: 50px;
+}
+
+.key p{
+	margin: 5px;
+}
+
+.value p {
+	margin: 5px;
+}
+/* .row {margin: 0 -5px;} */
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+
+.card {
+	box-shadow: 0 4px 8px 0 #cc0000;
+	padding: 16px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #19194d;
+	border-radius: 30px;
+  }
+/* .userContent p {
 	text-align: center;
 	font-size: 15px;
 
 }
 
 #uploadPic {
-	margin:70px 0 0 0;
-	float: left;
+	margin:0 0 0 0;
+	float: right;
 	display: block;
-	font-family: Arial;
+	font-family: 'serif';
 	font-size: 15px;
 }
 
@@ -289,7 +365,7 @@ footer {
 }
 
 #uploadPic input[text = "file"], input[text = "submit"] {
-	font-family: sans-serif;
+	font-family: serif;
 }
 
 #dummy2 input[type = "date"] {
@@ -299,7 +375,7 @@ footer {
 /*admin dashboard*/
 
 #myInput {
-  background: url("search-icon2.png") no-repeat;
+  background: url("../search-icon2.png") no-repeat;
   width: 250px;
   font-size: 12px;
   padding: 10px;
@@ -309,22 +385,21 @@ footer {
 
 #dummy, #dummy1, #dummy2{
 	display:none;
-	margin: 50px 350px;
 }
 
 #dummy p, #dummy1 p, #dummy2 p{
 	text-align: center;
 	font-size: 15px;
-	font-family: Helvetica;
+	font-family:'Cormorant Garamond' ;
 }
 
 #adminAccCreation{
 	display: none;
-	margin-left: 400px;
+	margin-left: 150px;
 }
 
 
-*#dummy-accounts {
+#dummy-accounts {
 	border-collapse: collapse;
 	width: 105%;
 } 
@@ -412,7 +487,52 @@ footer {
 
 
 /*Media Queries*/
-@media(max-width: 768px) {
+@media (max-width: 320px) {
+	header a {
+		font-size: 13px;
+	}
+
+	footer p{
+		font-size: 12px;
+	}
+	.content h1 {
+		margin: 0;
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+
+	.content {
+		text-align: center;
+		justify-content: center;
+	}
+	.content h4, p {
+		margin: 10px;
+	}
+
+	.AccountBtn {
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-top: 20px;
+		width: 50%;
+		height: 40px;
+		background: #cc0000;
+		border: none;
+		border-radius: 10px;
+		color: #ffffff;
+		font-family: serif;
+		cursor: pointer;
+	}
+
+	.sidebar {
+		width: 100%;
+	}
+	.flex-container {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 768px) {
 	header #brandName, header nav, header nav li{
 		float:none;
 		text-align: center;

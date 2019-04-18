@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+
+        <title>Admin Portal</title>
+        <link rel = "stylesheet" href = "css/style.css" type = "text/css">
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+        <script src = "../script.js"></script>
+
+    </head>
+
+    <body class = "Site">
+        <header>
+            <div class = "container">
+                <div id = "brandName">
+                    <h1><span class = "highlight">Banka</span> Banking App</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href = "#">Sign-out</a></li> <!--sign out page -->
+                     </ul>
+                </nav>
+           </div> 
+        </header>
+
+        <div class = "container Site-content">
+            <div class = "sidebar"> 
+                <ul>
+                    <li><a onclick = "loadPage()">Home</a></li>
+                    <li><a onclick = "loadUserAcc()">User Accounts</a></li>
+                    <li><a onclick = "loadAccPage()">Bank accounts</a></li>
+                    <li><a onclick = "loadAccCreaction()">Create an account</a></li>
+                </ul>
+            </div>
+
+            <div id = "userContent">
+                <div id = "homepage">
+                    <h1>Welcome, Paul</h1>
+                        <div id = "clientImg">
+                           <img src = "./images/man.jpg"> 
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Name</p></div>
+                            <div class = "profilevalue"><p>Paul Christophe</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Birthday</p></div>
+                            <div class = "profilevalue"><p>20/9/1990</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Gender</p></div>
+                            <div class = "profilevalue"><p>Male</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Address</p></div>
+                            <div class = "profilevalue"><p>No 1, Faraway Lane, Lekki</p></div>
+                        </div>
+                </div>
+                                
+                <div class = "account-creation" id = "adminAccCreation">
+                    <p>You are creating a new user account</p>
+                    <form class = "form" action = "">
+                        Admin/Staff:<input type = "radio" id = "createAcc">Admin</input>
+                        <input type = "radio" id = "createAcc">Staff</input><br>
+                        First Name:<input type = "text" placeholder = "First Name" required></input>
+                        Last Name:<input type = "text" placeholder = "Last Name" required></input>
+                        Email:<input type = "email" placeholder = "Enter email" required></input>
+                        Password:<input type = "password" placeholder = "Enter password" minlength = "8" required></input> <!--admin will use the default password "Banka2019" to create account-->
+                        <input type = "submit" value = "Create"></input>
+                    </form>
+                </div>
+
+                <div class="row" id = "dummy">
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Sheldon</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                <div class = "value"><p>Cooper</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>lee.cooper@bazinga.net</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08059694341</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Role</p></div>
+                                <div class = "value"><p>Admin</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Status</p></div>
+                                <div class = "value"><p>Activated</p></div>
+                            </div>
+                            <div class = "card-container">
+                            <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Leonard</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                <div class = "value"><p>Hofstader</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>sheldons-best-friend@gmail.com</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08135653807</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Role</p></div>
+                                <div class = "value"><p>Staff</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Status</p></div>
+                                <div class = "value"><p>De-activated</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Leonard</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                <div class = "value"><p>Nimoy</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>spock@startrek.franchise</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08135653807</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Role</p></div>
+                                <div class = "value"><p>Admin</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Status</p></div>
+                                <div class = "value"><p>De-activated</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>                   
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Stan</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                <div class = "value"><p>Lee</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>cameoking@marvel.com</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08025678307</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Role</p></div>
+                                <div class = "value"><p>Client</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Status</p></div>
+                                <div class = "value"><p>De-activated</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>                   
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "row" id = "dummy1">
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Sheldon</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                    <div class = "value"><p>Cooper</p></div>
+                                </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>lee.cooper@bazinga.net</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08059694341</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Number</p></div>
+                                <div class = "value"><p>4020000001</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Balance</p></div>
+                                <div class = "value"><p>5000.00</p></div>
+                            </div>
+                                <div class = "card-container">
+                                <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Leonard</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                <div class = "value"><p>Hofstader</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>sheldons-best-friend@gmail.com</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08135653807</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Number</p></div>
+                                <div class = "value"><p>4020000002</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Balance</p></div>
+                                <div class = "value"><p>1500.00</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section>
+            <footer>
+                <p>Banka Banking App, Copyright &copy; 2019</p>
+            </footer>
+        </section>
+    </body>
+</html>

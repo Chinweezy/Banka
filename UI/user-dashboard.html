@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+
+        <title>Client Portal</title>
+        <link rel = "stylesheet" href = "css/style.css" type = "text/css"></link>
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+        <script src = "../script.js"></script>
+
+    </head>
+
+    <body class = "Site">
+        <header>
+            <div class = "container">
+                <div id = "brandName">
+                    <h1><span class = "highlight">Banka</span> Banking App</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href = "#">Sign-out</a></li>
+                     </ul>
+                </nav>
+           </div> 
+        </header>
+
+        <div class = "Site-content container">
+            <div class = "sidebar"> 
+                <ul>
+                    <li><a onclick = "loadUserPage()">Home</a></li>
+                    <li><a onclick = "loadOpenAccPage()">Open an account</a></li>
+                    <li><a onclick = "loadTransHistory()">Transaction history</a></li>
+                </ul>
+            </div>
+
+            <div id = "userContent">
+                <div  id = "homepage" >
+                    <h1>Welcome, Chinwe</h1>
+                        <div id = "clientImg">
+                           <img src = "./images/download (1).jpg"> 
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Name</p></div>
+                            <div class = "profilevalue"><p>Chinwe Ugoji</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Birthday</p></div>
+                            <div class = "profilevalue"><p>8/8/1980</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Gender</p></div>
+                            <div class = "profilevalue"><p>Female</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Address</p></div>
+                            <div class = "profilevalue"><p>221B Baker Street, Ikeja</p></div>
+                        </div>
+                </div>
+
+                <div id = "dummy">
+                    <p>You are opening an instant account</p>
+
+                    <form class = "form"  id = "accForm" action = "">
+                        Title: <select id = "title">
+                                    <option>--select--</option>
+                                    <option>Dr.</option>
+                                    <option>Mr.</option>
+                                    <option>Mrs.</option>
+                                    <option>Miss.</option>
+                                </select><br>
+                        First Name:<input type = "text" placeholder = "Enter First Name..." required></input>
+                        Last Name:<input type = "text" placeholder = "Enter Last Name..." required></input>
+                        Other name(s):<input type = "text" placeholder = "Other names..." required></input>
+                        Gender:<input type = "radio">Female</input>
+                        <input type = "radio">Male</input><br>
+                        Date of Birth:<input type = "date" placeholder = "Enter date of birth"></input>
+                        Phone no:<input type = "phone" placeholder = "080-xxxxxxxx"></input>
+                        Email:<input type = "email" placeholder = "Enter email"></input>
+                        Address of residence: <input type = "address" placeholder = "Enter Address"></input>
+                        State of residence: <input type = "text" placeholder = "Enter state of residence"></input>
+                        <input type = "submit"></input>
+                    </form>
+                </div>
+
+                <!-- <div id = "dummy2">
+                    <p>You are viewing dummy data</p>
+                    From:<input type = "date" id="searchBar"></input> To: <input type = "date" id="searchBar"></input>
+                    <input type = "submit" value = "Go"></input>
+                    <table id = "dummy-accounts" style = "width:130%"> -->
+                        
+                <div class="row" id = "dummy2">
+                    <div class="column">
+                        <div class="card">
+                            <h2>Transaction History</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>Transaction ID</p></div>
+                                <div class = "value"><p>1903003</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Date</p></div>
+                                <div class = "value"><p>24/03/2019</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Number</p></div>
+                                <div class = "value"><p>4026785001</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Description</p></div>
+                                <div class = "value"><p>Withdrawal</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Amount</p></div>
+                                <div class = "value"><p>2,000.00</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <h2>Transaction History</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>Transaction ID</p></div>
+                                <div class = "value"><p>1903002</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Date</p></div>
+                                <div class = "value"><p>23/03/2019</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Number</p></div>
+                                <div class = "value"><p>4026785001</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Description</p></div>
+                                <div class = "value"><p>Deposit</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Amount</p></div>
+                                <div class = "value"><p>1,000.00</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <h2>Transaction History</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>Transaction ID</p></div>
+                                <div class = "value"><p>1903001</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Date</p></div>
+                                <div class = "value"><p>23/03/2019</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Number</p></div>
+                                <div class = "value"><p>4026785001</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Description</p></div>
+                                <div class = "value"><p>Deposit</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Amount</p></div>
+                                <div class = "value"><p>500.00</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </div>
+
+        <section>
+            <footer>
+                <p>Banka Banking App, Copyright &copy; 2019</p>
+            </footer>
+        </section>
+    </body>
+</html>
