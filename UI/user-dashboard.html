@@ -6,11 +6,12 @@
 
         <title>Client Portal</title>
         <link rel = "stylesheet" href = "css/style.css" type = "text/css"></link>
-        <script src = "script.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+        <script src = "../script.js"></script>
 
     </head>
 
-    <body>
+    <body class = "Site">
         <header>
             <div class = "container">
                 <div id = "brandName">
@@ -24,7 +25,7 @@
            </div> 
         </header>
 
-        <div class = "container">
+        <div class = "Site-content container">
             <div class = "sidebar"> 
                 <ul>
                     <li><a onclick = "loadUserPage()">Home</a></li>
@@ -32,13 +33,33 @@
                     <li><a onclick = "loadTransHistory()">Transaction history</a></li>
                 </ul>
             </div>
-            <div class = "content">
-                <div  id = "homepage">
-                <h3>Welcome, {First Name of Client}</h3>
-                    <form id = "uploadPic"action = " ">
-                        Upload profile picture<br><input type = "file" name = "Upload picture file"> </input><br>
-                        <input type = "submit" name = "UploadBtn" value = "Upload"></input>
-                    </form> 
+
+            <div id = "userContent">
+                <div  id = "homepage" >
+                    <h1>Welcome, Chinwe</h1>
+                        <div id = "clientImg">
+                           <img src = "./images/download (1).jpg"> 
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Name</p></div>
+                            <div class = "profilevalue"><p>Chinwe Ugoji</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Birthday</p></div>
+                            <div class = "profilevalue"><p>8/8/1980</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Gender</p></div>
+                            <div class = "profilevalue"><p>Female</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Address</p></div>
+                            <div class = "profilevalue"><p>221B Baker Street, Ikeja</p></div>
+                        </div>
                 </div>
 
                 <div id = "dummy">
@@ -66,49 +87,91 @@
                     </form>
                 </div>
 
-                <div id = "dummy2">
+                <!-- <div id = "dummy2">
                     <p>You are viewing dummy data</p>
                     From:<input type = "date" id="searchBar"></input> To: <input type = "date" id="searchBar"></input>
                     <input type = "submit" value = "Go"></input>
-                    <table id = "dummy-accounts" style = "width:130%">
-                    <tr>
-                        <th>Transaction ID</th>
-                        <th>Transaction Date</th>
-                        <th>Account No</th>
-                        <th>Transaction Type</th>
-                        <th id="money">Debit</th>
-                        <th id="money">Credit</th>
-                    </tr>
-                    <tr>
-                        <td>1903003</td>
-                        <td>26/03/2019</td>
-                        <td id = "accountNo">4026785001</td>
-                        <td>Withdrawal</td>
-                        <td id="money">2,000.00</td>
-                        <td id="money"></td>
-                    </tr>
-                    <tr>
-                        <td>1903002</td>
-                        <td>24/03/2019</td>
-                        <td id = "accountNo">4026785001</td>
-                        <td>Deposit</td>
-                        <td id="money"></td>
-                        <td id="money">1,000.00</td>
-                    </tr>
-                    <tr>
+                    <table id = "dummy-accounts" style = "width:130%"> -->
+                        
+                <div class="row" id = "dummy2">
+                    <div class="column">
+                        <div class="card">
+                            <h2>Transaction History</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>Transaction ID</p></div>
+                                <div class = "value"><p>1903003</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Date</p></div>
+                                <div class = "value"><p>24/03/2019</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Number</p></div>
+                                <div class = "value"><p>4026785001</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Description</p></div>
+                                <div class = "value"><p>Withdrawal</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Amount</p></div>
+                                <div class = "value"><p>2,000.00</p></div>
+                            </div>
+                        </div>
+                    </div>
 
-                        <td>1903001</td> <!--year-month-serialno-->
-                        <td>23/03/2019</td>
-                        <td id = "accountNo">4026785001</td>
-                        <td>Withdrawal</td>
-                        <td id="money">500.00</td>
-                        <td id="money"></td>
-                    </table>
-                </div>
+                    <div class="column">
+                        <div class="card">
+                            <h2>Transaction History</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>Transaction ID</p></div>
+                                <div class = "value"><p>1903002</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Date</p></div>
+                                <div class = "value"><p>23/03/2019</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Number</p></div>
+                                <div class = "value"><p>4026785001</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Description</p></div>
+                                <div class = "value"><p>Deposit</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Amount</p></div>
+                                <div class = "value"><p>1,000.00</p></div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div>
-                </div>
-                
+                    <div class="column">
+                        <div class="card">
+                            <h2>Transaction History</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>Transaction ID</p></div>
+                                <div class = "value"><p>1903001</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Date</p></div>
+                                <div class = "value"><p>23/03/2019</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Number</p></div>
+                                <div class = "value"><p>4026785001</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Description</p></div>
+                                <div class = "value"><p>Deposit</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Amount</p></div>
+                                <div class = "value"><p>500.00</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
             </div>
         </div>
 

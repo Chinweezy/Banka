@@ -3,31 +3,36 @@ import chaiHttp from 'chai-http';
 import app from '../../app';
 
 chai.use(chaiHttp);
+chai.should();
 
 describe('Testing user url', () => {
   it('should get all users record', (done) => {
     chai.request(app)
       .get('/api/v1/users')
-      .end((error, response) => {
-        expect(response).to.be.an('object');
-        expect(response.body.status).to.be.equal(200);
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('object')
         done();
       });
   });
+
   it('should get a single user record', (done) => {
+    const id = 1;
     chai.request(app)
-      .get('/api/v1/users/:id')
-      .end((error, response) => {
-        expect(response.body).to.be.an('object');
-        expect(response).to.have.status(200);
+      .get(`/api/v1/users/:${id}`)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('object')
         done();
       });
   });
+
   it('should not get a single user record', (done) => {
+    const id = 7;
     chai.request(app)
-      .get('/api/v1/users/:id')
-      .end((error, response) => {
-        expect(response).to.have.status(404);
+      .get(`/api/v1/users/:${id}`)
+      .end((err, res) => {
+        res.should.have.status(404);
         done();
       });
   });

@@ -5,12 +5,13 @@
         <meta name="viewport" content="width=device-width">
 
         <title>Admin Portal</title>
-        <link rel = "stylesheet" href = "css/style.css" type = "text/css"></link>
-        <script src = "script.js"></script>
+        <link rel = "stylesheet" href = "css/style.css" type = "text/css">
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+        <script src = "../script.js"></script>
 
     </head>
 
-    <body>
+    <body class = "Site">
         <header>
             <div class = "container">
                 <div id = "brandName">
@@ -24,7 +25,7 @@
            </div> 
         </header>
 
-        <div class = "container">
+        <div class = "container Site-content">
             <div class = "sidebar"> 
                 <ul>
                     <li><a onclick = "loadPage()">Home</a></li>
@@ -34,138 +35,251 @@
                 </ul>
             </div>
 
-            <div class = "account-creation" id = "adminAccCreation">
-                <p>You are creating a new user account</p>
-                <form class = "form" action = "">
-                    Admin/Staff:<input type = "radio" id = "createAcc">Admin</input>
-                    <input type = "radio" id = "createAcc">Staff</input><br>
-                    First Name:<input type = "text" placeholder = "First Name" required></input>
-                    Last Name:<input type = "text" placeholder = "Last Name" required></input>
-                    Email:<input type = "email" placeholder = "Enter email" required></input>
-                    Password:<input type = "password" placeholder = "Enter password" minlength = "8" required></input> <!--admin will use the default password "Banka2019" to create account-->
-                    <input type = "submit" value = "Create"></input>
-                </form>
-            </div>
-
-            <div class = "content">
+            <div id = "userContent">
                 <div id = "homepage">
-                <h3>Welcome, {First Name of Admin}</h3>
-                    <form id = "uploadPic" action = " ">
-                        Upload profile picture<br><input type = "file" name = "Upload picture file"> </input><br>
-                        <input type = "submit" name = "UploadBtn" value = "Upload"></input>
-                    </form> 
+                    <h1>Welcome, Paul</h1>
+                        <div id = "clientImg">
+                           <img src = "./images/man.jpg"> 
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Name</p></div>
+                            <div class = "profilevalue"><p>Paul Christophe</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Birthday</p></div>
+                            <div class = "profilevalue"><p>20/9/1990</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Gender</p></div>
+                            <div class = "profilevalue"><p>Male</p></div>
+                        </div>
+
+                        <div class = "profile-container">
+                            <div class = "profilekey"><p>Address</p></div>
+                            <div class = "profilevalue"><p>No 1, Faraway Lane, Lekki</p></div>
+                        </div>
+                </div>
+                                
+                <div class = "account-creation" id = "adminAccCreation">
+                    <p>You are creating a new user account</p>
+                    <form class = "form" action = "">
+                        Admin/Staff:<input type = "radio" id = "createAcc">Admin</input>
+                        <input type = "radio" id = "createAcc">Staff</input><br>
+                        First Name:<input type = "text" placeholder = "First Name" required></input>
+                        Last Name:<input type = "text" placeholder = "Last Name" required></input>
+                        Email:<input type = "email" placeholder = "Enter email" required></input>
+                        Password:<input type = "password" placeholder = "Enter password" minlength = "8" required></input> <!--admin will use the default password "Banka2019" to create account-->
+                        <input type = "submit" value = "Create"></input>
+                    </form>
                 </div>
 
-                <div id = "dummy">
-                    <p>You are viewing dummy data</p>
-                    <input type="text" id="myInput" onkeyup="searchAccountRecord()" placeholder="        First Name" >
-                    <table id = "dummy-accounts">
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Phone Number</th>
-                        <th>Role</th>
-                        <th>Status</th>
-                    </tr>
-                    <tr>
-                        <td>Sheldon</td>
-                        <td>Cooper</td>
-                        <td>lee.cooper@bazinga.net</td>
-                        <td>08059694341</td>
-                        <td>Admin</td>
-                        <td>Activated</td>
-                        <td class = "deleteUser"><input type="button" value="Deactivate User" onclick="#" id = "delete"></input></td>
-                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
-                    </tr>
-                    <tr>
-                        <td>Leonard</td>
-                        <td>Hofstadter</td>
-                        <td>sheldons-best-friend@gmail.com</td>
-                        <td>09092148311</td>
-                        <td>Staff</td>
-                        <td>Activated</td>
-                        <td class = "deleteUser"><input type="button" value="Deactivate User" onclick="#" id = "delete"></input></td>
-                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
-                    </tr>
-                    <tr>
-                        <td>Sherlock</td>
-                        <td>Holmes</td>
-                        <td>highfunctioningsociopath@genius.com</td>
-                        <td>08058694545</td>
-                        <td>Client</td>
-                        <td>Activated</td>
-                        <td class = "deleteUser"><input type="button" value="Deactivate User" onclick="#" id = "delete"></input></td>
-                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
-                    </tr>
-                    <tr>
-                        <td>Leonard</td>
-                        <td>Nimoy</td>
-                        <td>spock@startrek.francise</td>
-                        <td>08135653807</td>
-                        <td>Admin</td>
-                        <td>Deactivated</td>
-                        <td class = "deleteUser"><input type="button" value="Deactivate User" onclick="#" id = "delete"></input></td>
-                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
-                    </tr>
-                    <tr>
-                        <td>Jim</td>
-                        <td>Moriaty</td>
-                        <td>jmoriaty@smart.com</td>
-                        <td>09091145390</td>
-                        <td>Client/td>
-                        <td>Deactivated</td>
-                        <td class = "deleteUser"><input type="button" value="Deactivate User" onclick="#" id = "delete"></input></td>
-                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
-                    </tr>
-                    </table>
+                <div class="row" id = "dummy">
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Sheldon</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                <div class = "value"><p>Cooper</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>lee.cooper@bazinga.net</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08059694341</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Role</p></div>
+                                <div class = "value"><p>Admin</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Status</p></div>
+                                <div class = "value"><p>Activated</p></div>
+                            </div>
+                            <div class = "card-container">
+                            <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Leonard</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                <div class = "value"><p>Hofstader</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>sheldons-best-friend@gmail.com</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08135653807</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Role</p></div>
+                                <div class = "value"><p>Staff</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Status</p></div>
+                                <div class = "value"><p>De-activated</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Leonard</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                <div class = "value"><p>Nimoy</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>spock@startrek.franchise</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08135653807</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Role</p></div>
+                                <div class = "value"><p>Admin</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Status</p></div>
+                                <div class = "value"><p>De-activated</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>                   
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Stan</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                <div class = "value"><p>Lee</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>cameoking@marvel.com</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08025678307</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Role</p></div>
+                                <div class = "value"><p>Client</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Status</p></div>
+                                <div class = "value"><p>De-activated</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>                   
+                        </div>
+                    </div>
                 </div>
 
-                <div id = "dummy1">
-                    <p>You are viewing dummy data</p>
-                    <input type="text" id="myInput" onkeyup="searchAccountRecord()" placeholder="        Account Number, First Name" >
-                    <table id = "dummy-accounts">
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Phone Number</th>
-                        <th>Acount No</th>
-                        <th>Account Balance</th>
-                    </tr>
-                    <tr>
-                        <td>Sherlock</td>
-                        <td>Holmes</td>
-                        <td>highfunctioningsociopath@genius.com</td>
-                        <td>08058694545</td>
-                        <td id = "accountNo">4026785001</td>
-                        <td id="money">0.00</td>
-                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
-                    </tr>
-                    <tr>
-                        <td>Jim</td>
-                        <td>Moriaty</td>
-                        <td>jmoriaty@smart.com</td>
-                        <td>09091145390</td>
-                        <td id = "accountNo">4026785002</td>
-                        <td id="money">20000.00</td>
-                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
-                    </tr>
-                    <tr>
-                        <td>John</td>
-                        <td>Watson</td>
-                        <td>armydoctor@bakerstreet.com</td>
-                        <td>08139453207</td>
-                        <td id = "accountNo">4026785003</td>
-                        <td id="money">2000.00</td>
-                        <td class = "deleteUser"><input type="button" value="Delete user" onclick="deleteUser(this)" id = "delete"></input></td>
-                    </tr>
-                    </table>
-                </div>
+                <div class = "row" id = "dummy1">
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Sheldon</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                    <div class = "value"><p>Cooper</p></div>
+                                </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>lee.cooper@bazinga.net</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08059694341</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Number</p></div>
+                                <div class = "value"><p>4020000001</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Balance</p></div>
+                                <div class = "value"><p>5000.00</p></div>
+                            </div>
+                                <div class = "card-container">
+                                <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="column">
+                        <div class="card" id = "card">
+                            <h2>User Account</h2>
+                            <div class = "card-container">
+                                <div class = "key"><p>First Name</p></div>
+                                <div class = "value"><p>Leonard</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Last Name</p></div>
+                                <div class = "value"><p>Hofstader</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Email</p></div>
+                                <div class = "value"><p>sheldons-best-friend@gmail.com</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Phone Number</p></div>
+                                <div class = "value"><p>08135653807</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Number</p></div>
+                                <div class = "value"><p>4020000002</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <div class = "key"><p>Account Balance</p></div>
+                                <div class = "value"><p>1500.00</p></div>
+                            </div>
+                            <div class = "card-container">
+                                <input type="button" value="Delete user" onclick="deleteUser()" id = "delete"></input></td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
+        
         <section>
             <footer>
                 <p>Banka Banking App, Copyright &copy; 2019</p>
