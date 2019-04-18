@@ -34,6 +34,7 @@ ul {
 .form .message a{
 	color:#cc0000;
 	padding: 5px;
+	font-weight: bold;
 	text-decoration: none;
 }
 
@@ -61,7 +62,7 @@ ul {
 	border:none;
 	border-radius: 2px;
 	color:#ffffff;
-	font-family: sans-serif;
+	font-family: serif;
 	text-transform: uppercase;
 	cursor: pointer;
 	border-radius: 45px;
@@ -113,8 +114,18 @@ header li{
 header nav{
 	float:right;
 	margin-top: 10px;
+	
 }
 
+.toggle {
+	width: 100%;
+	padding: 10px;
+	background-color: #19194d;
+	text-align: right;
+	font-size: 30px;
+	color: #000000;
+	display: none;
+}
 /*showcase*/
 
 .Site {
@@ -123,12 +134,18 @@ header nav{
 	flex-direction: column;
   }
   
-  .Site-content {
+.Site-content {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
   }
 
+.dash-content {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+  }
+  
 .content {
 	text-align: center;
 	color: #ffffff;
@@ -190,10 +207,6 @@ footer {
 	font-family: Helvetica;
 }
 
-.signup-page .message {
-	font-size: 15px;
-	font-family: Arial;
-}
 
 /*Login*/
 
@@ -217,7 +230,7 @@ footer {
 
 .login-page .message {
 	font-size: 15px;
-	font-family: serif;
+	font-family: 'Cormorant Garamond';
 }
 
 /*AccountCreation*/
@@ -509,6 +522,16 @@ img {
 		margin: 10px;
 	}
 
+	#homepage h1 {
+		font-size: 25px;
+	}
+
+	.column {
+		min-width: 200px;
+		margin-top: 20px;
+		flex-basis: 20%;
+	}
+
 	.AccountBtn {
 		padding-left: 10px;
 		padding-right: 10px;
@@ -525,12 +548,154 @@ img {
 
 	.sidebar {
 		width: 100%;
+		flex-direction: row;
 	}
 	.flex-container {
 		display: flex;
 		flex-direction: column;
 	}
+  
+	.dash-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	  }
+
+	#dummy #accForm {
+		margin-left: 0px;
+	}
+
+	#dummy p, #dummy1 p, #dummy2 p {
+		text-align: center;
+		font-size: 18px;
+		font-family: 'Cormorant Garamond';
+	}
+
+	.form {
+		position: relative;
+		z-index: 1;
+		background: #19194d;
+		color: #ffffff;
+		width: 100%;
+		margin: 0;
+		padding: 15px;
+	}
+
+	.toggle{
+		display: block;
+	}
+
+	ul {
+		width: 100%;
+	}
+
+	ul li {
+		text-align: center;
+		display: block;
+	}
+
 }
+
+@media screen and (min-width: 321px) and (max-width: 767px) {
+	header a {
+		font-size: 13px;
+	}
+
+	footer p{
+		font-size: 12px;
+	}
+	.content h1 {
+		margin: 0;
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+
+	.content {
+		text-align: center;
+		justify-content: center;
+	}
+	.content h4, p {
+		margin: 10px;
+	}
+
+	#homepage h1 {
+		font-size: 25px;
+	}
+
+	.column {
+		min-width: 250px;
+		margin-top: 20px;
+		flex-basis: 20%;
+	}
+
+	.AccountBtn {
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-top: 20px;
+		width: 40%;
+		height: 40px;
+		background: #cc0000;
+		border: none;
+		border-radius: 10px;
+		color: #ffffff;
+		font-family: serif;
+		cursor: pointer;
+	}
+
+	.sidebar {
+		width: 100%;
+		flex-direction: row;
+	}
+	.flex-container {
+		display: flex;
+		flex-direction: column;
+	}
+  
+	.dash-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	  }
+
+	#dummy #accForm {
+		margin-left: 0px;
+	}
+
+	#dummy p, #dummy1 p, #dummy2 p {
+		text-align: center;
+		font-size: 18px;
+		font-family: 'Cormorant Garamond';
+	}
+
+	.form {
+		position: relative;
+		z-index: 1;
+		background: #19194d;
+		color: #ffffff;
+		width: 100%;
+		margin: 10px;
+		padding: 15px;
+	}
+
+	#adminAccCreation {
+		margin-left: 0;
+	}
+
+	.toggle{
+		display: block;
+	}
+
+	ul {
+		width: 100%;
+	}
+
+	ul li {
+		text-align: center;
+		display: block;
+	}
+}
+
+
 
 @media screen and (max-width: 768px) {
 	header #brandName, header nav, header nav li{
@@ -549,7 +714,6 @@ img {
 
 	#showcase button {
 		display: block;
-		width: 50%;
+		width: 20%;
 		padding:0 5px 0 5px;
-	}
-}
+	}	
